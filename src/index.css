@@ -1,0 +1,136 @@
+body {
+  margin:0px;
+  padding: 0px;
+  /* background-image: url("./bg.jpg"); */
+  color: white;
+  background-color:black;
+
+}
+
+.list-item{
+
+  background-color: black;
+  color: white;
+  display: flex;
+  padding: 40px;
+}
+
+.information{
+  margin-left: 10px;
+  width: 600px;
+}
+
+.list{
+  margin-left: 13%;
+  width: 970px;
+}
+
+.extra-info{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+
+.poster{
+
+  width: 200px;
+  height: 300px;
+}
+
+.Unfavourite{
+  background-color: crimson;
+  height: 50px;
+  width: 100px;
+
+}
+
+.tabs button{
+  background-color: #daa520;
+  width: 100px;
+  height:60px;
+  border-width: 0px;
+  border-radius: 5px;
+}
+
+.tabs{
+  display: flex;
+  justify-content: space-evenly;
+  padding: 5px;
+
+}
+.favourite{
+  background-color: green;
+  height: 50px;
+  width: 100px;
+}
+
+
+.navbar{
+  background-image: url("./nav-back.jpg");
+  background-size: contain;
+  height:320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.navbar input{
+  color: aliceblue;
+  width:450px;
+  height:45px;
+
+  border-width: 0px;
+  font-size: 20px;
+  background-color: black;
+}
+.navbarbtn{
+
+  width:100px;
+  height:47px;
+  border-width: 0px;
+  background-color: black;
+
+}
+.navv{
+
+  display: flex;
+
+}
+.navbarbtn img{
+  width: 55px;
+  height: 45px;
+}
+
+.search-result{
+  background-color: black;
+  display: flex;
+  width: 600px;
+  height: 200px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px;
+}
+
+.search-result img{
+
+  width: 150px;
+  height: 150px;
+  margin-right: 15px;
+  
+}
+
+.searched{
+  display: flex;
+  flex-direction: column;
+}
+.add-fav{
+  background-color: lime;
+  border-width: 0px;
+
+}
+.not-found{
+  color: red;
+  font-size: 20px;
+  background-color: black;
+}
