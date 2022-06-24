@@ -66,7 +66,7 @@ body {
 
 
 .navbar{
-  background-image: url("./nav-back.jpg");
+  background-image: url("./images/nav-back.jpg");
   background-size: contain;
   height:320px;
   display: flex;
