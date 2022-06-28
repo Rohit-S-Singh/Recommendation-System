@@ -1,7 +1,7 @@
 import React from 'react';
-import imag from '../images/search.png'; 
+// import imag from '../images/search.png'; 
 
-import {addToMoviesList , handleMovieSearch} from '../actions/action';
+import {addToMoviesList , handleMovieSearch} from '../../actions/action';
 
 class Navbar extends React.Component{
 
@@ -44,7 +44,7 @@ class Navbar extends React.Component{
            
 
             <input onChange={this.handleChangeInSearchBox} type="text" placeholder="Search here..."/>
-            <button className = "navbarbtn" onClick={this.handleSearchClick}><img className="btnn" src={imag} alt="no-image"/></button>
+            {/* <button className = "navbarbtn" onClick={this.handleSearchClick}><img className="btnn" src={imag} alt="no-image"/></button> */}
             </div>
 
         { showSearchResults &&

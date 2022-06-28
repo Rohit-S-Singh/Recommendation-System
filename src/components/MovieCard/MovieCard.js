@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { addfavourite , removefavourite} from '../actions/action';
+import { addfavourite , removefavourite} from '../../actions/action';
 
 class MovieCard extends React.Component{
     

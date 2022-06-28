@@ -7,7 +7,13 @@
 import React from "react";
 
 import { connect } from "react-redux";
-import { Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+
+// <BrowserRouter>
+//  <Switch>
+//   //your routes here
+//  </Switch>
+// </BrowserRouter>
 // import { Container } from "reactstrap";
 
 // routes
@@ -28,13 +34,17 @@ class Application extends React.PureComponent {
         <main className="main">
           {/* <Container> */}
             <div className="wrapper">
+           <BrowserRouter>
+
               <Switch>
                 <Route exact path="/" component={HomePage} />
-                <Route path="/login" component={Login} />
+                <Route exact path="/login" component={Login} />
                 {/* <Route path="/register" component={Signup} /> */}
                 {/* <Route path="/404" component={Page404} /> */}
-                {/* <Route path="*" component={Page404} /> */}
+                <Route path="*" component={Login} />
               </Switch>
+           </BrowserRouter>
+
             </div>
           {/* </Container> */}
         </main>
