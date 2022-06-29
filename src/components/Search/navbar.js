@@ -1,7 +1,7 @@
 import React from 'react';
-import imag from './search.png'; 
+// import imag from '../images/search.png'; 
 
-import {addToMoviesList , handleMovieSearch} from '../actions/action';
+import {addToMoviesList , handleMovieSearch} from '../../actions/action';
 
 class Navbar extends React.Component{
 
@@ -15,13 +15,13 @@ class Navbar extends React.Component{
 
     handleAddToMovies = (movie) => {
 
-        this.props.store.dispatch(addToMoviesList(movie));
+        // this.props.store.dispatch(addToMoviesList(movie));
     
     };
 
     handleSearchClick = () => {
         const { searchText } = this.state;
-        this.props.store.dispatch(handleMovieSearch(searchText));
+        // this.props.store.dispatch(handleMovieSearch(searchText));
     };
 
     handleChangeInSearchBox = (e) => {
@@ -35,7 +35,7 @@ class Navbar extends React.Component{
 
         const { showSearchResults } = this.props.search;
 
-        const {result} = this.props.search;
+        const result = this.props.result;
 
         return <div className = "navbar">
 
@@ -44,7 +44,7 @@ class Navbar extends React.Component{
            
 
             <input onChange={this.handleChangeInSearchBox} type="text" placeholder="Search here..."/>
-            <button className = "navbarbtn" onClick={this.handleSearchClick}><img className="btnn" src={imag} alt="no-ige"/></button>
+            {/* <button className = "navbarbtn" onClick={this.handleSearchClick}><img className="btnn" src={imag} alt="no-image"/></button> */}
             </div>
 
         { showSearchResults &&
