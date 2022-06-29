@@ -6,26 +6,26 @@ class MovieCard extends React.Component{
     
     handlefavourite = (movie) => {
         
-        this.props.store.dispatch(addfavourite(movie));
+        // this.props.store.dispatch(addfavourite(movie));
     }
 
     handleUnfavourite = (movie) => {
         
-        this.props.store.dispatch(removefavourite(movie));    
+        // this.props.store.dispatch(removefavourite(movie));    
     }
 
 
     isfavourite = (movie) => {  
         
-        var a = this.props.store.getState().movies.favourites;
+        // var a = this.props.store.getState().movies.favourites;
     
-        var i =  a.indexOf(movie);
+        // var i =  a.indexOf(movie);
     
-        if(i===-1){
-            return 0;
-        }
+        // if(i===-1){
+        //     return 0;
+        // }
 
-        return 1;    
+        // return 1;    
     }
 
 

@@ -1,5 +1,5 @@
 // API KEY : 3ca5df7
-export const data = [
+export const movies = [
   {
     Title: 'The Avengers',
     Year: '2012',
