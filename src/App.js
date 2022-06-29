@@ -1,6 +1,10 @@
 import Navbar from './components/Search/navbar';
 import MovieCard from './components/MovieCard/MovieCard';
 import Navbar1 from './components/Navbar/navbar1';
+
+import {HomeReducer,searchReducer} from '../src/components/HomePage/reducer'
+
+
 import Application from './components/Application';
 import { createBrowserHistory } from 'history';
 import {  combineReducers} from 'redux';
@@ -40,9 +44,24 @@ const history = createBrowserHistory({
   hashType: 'noslash'
 });
 
+console.log("homereducer",HomeReducer);
+
+let reducer = (state=0, action) => {
+  switch (action.type) {
+    case 'INCREASE': 
+            return state+1
+    case 'DECREASE': 
+            return state-1
+    default: return state
+  }
+}
+
 const RootReducer = combineReducers({
   router: connectRouter(history),
-});
+  HomeReducer:HomeReducer,
+  searchReducer:searchReducer
+}
+);
 
 
 var store = createStore(RootReducer , applyMiddleware( thunk ) );

@@ -9,13 +9,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-// <BrowserRouter>
-//  <Switch>
-//   //your routes here
-//  </Switch>
-// </BrowserRouter>
-// import { Container } from "reactstrap";
-
 // routes
 import Login from "../Login";
 import HomePage from "../HomePage";
@@ -55,6 +48,8 @@ class Application extends React.PureComponent {
 }
 
 const mapStateToProps = (state) => {
+
+  console.log("staate====>>", state);
   return {
   };
 };
