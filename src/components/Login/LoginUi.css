@@ -9,8 +9,8 @@
   .sub-main {
     display: flex;
     justify-content: center;
-    height: 500px;
-    width: 550%;
+    height: 600px;
+    width: 550px;
     box-shadow: 11px 12px 13px 12px rgb(207, 207, 207);
     padding-top: 30px;
     border-radius: 70px; 

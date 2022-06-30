@@ -17,7 +17,7 @@ function LoginUi() {
 
 
          </div>
-         <div>
+         <div style={{color:"black"}}>
            <h1>Login Page</h1>
            <div>
              <img src={email} alt="email" className="email"/>
@@ -32,7 +32,7 @@ function LoginUi() {
           </div>
            
             <p className="link">
-              <a href="#">Forgot password ?</a> Or<a href="#">Sign Up</a>
+              <a href="#">Forgot password ?</a> Or <a href="#">Sign Up</a>
             </p>
            
  
