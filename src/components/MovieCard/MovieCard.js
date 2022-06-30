@@ -30,9 +30,6 @@ class MovieCard extends React.Component{
 
 
     render(){
-
-        // console.log()
-
         return <div className="list-item">
             
             <img src={this.props.movie.Poster} className="poster" alt="Not Available"></img>
@@ -68,7 +65,6 @@ const mapDispatchToProps = (dispatch) => {
 
 
 function mapStateToProps(state) {
-  console.log("state ->>",state);
   return { 
     favourites:state.HomeReducer.favourites 
 };

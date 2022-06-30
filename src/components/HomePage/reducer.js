@@ -11,7 +11,6 @@ export const HomeReducer = (state = initialstate , action)=>{
     switch(action.type){
         
         case ADD_MOVIES:
-            console.log("mklmklmklnlnlnl",action.movies);
             return {...state , movies: action.movies};   
 
         case ADD_FAVOURITES:

@@ -7,7 +7,6 @@ export default function CenteredTabs(props) {
   const [value, setValue] = React.useState(props.activetab);
 
   const handleChange = (event, newValue) => {
-    console.log("efwewebewbwebwebweeewb");
     if(value === 1){
         // props.func1();
     }

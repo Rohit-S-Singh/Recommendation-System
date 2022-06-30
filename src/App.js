@@ -44,7 +44,6 @@ const history = createBrowserHistory({
   hashType: 'noslash'
 });
 
-console.log("homereducer",HomeReducer);
 
 let reducer = (state=0, action) => {
   switch (action.type) {

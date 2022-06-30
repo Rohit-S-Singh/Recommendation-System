@@ -28,7 +28,6 @@ class HomePage extends React.Component {
     // this.props.homepage.store.subscribe(() => this.setState({}))
     this.props.add(movies);
 
-  console.log("mov", movies);
 
 
 
@@ -39,7 +38,6 @@ class HomePage extends React.Component {
 
   movieclicked(){
     
-  //  console.log("kjnjknkjnnj "  ,this.props);
     this.props.show();
     // store.dispatch(showmov());
 
@@ -49,7 +47,6 @@ class HomePage extends React.Component {
   }
 
   favouriteclicked(){
-    console.log("clicked me",this.props);
     this.props.showfav();
 
   // showfav()
@@ -74,17 +71,14 @@ class HomePage extends React.Component {
     var favourites = this.props.homepage.favourites;
 
 
-    console.log("movvvvvvvvvviiiesss" , favourites);
 
     var curr_tab_movies =  this.props.homepage.showfavourite ? favourites:movies  ;
 
-    console.log("current movies" , curr_tab_movies);
 
     var activetab = this.props.homepage.showfavourite ? 1 : 0;
 
     var i = 0;
 
-    console.log("cac" , this.props);
 
     return (
       <div className="App">
@@ -123,7 +117,6 @@ const mapDispatchToProps = (dispatch) => {
 
 
 function mapStateToProps(state) {
-  console.log("state ->>",state);
   return { homepage:state.HomeReducer, search:state.searchReducer };
 }
 

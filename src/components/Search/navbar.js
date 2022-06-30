@@ -1,5 +1,6 @@
 import React from 'react';
-// import imag from '../images/search.png'; 
+import {connect} from 'react-redux'; 
+import imag from '../../images/search.png'; 
 
 import {addToMoviesList , handleMovieSearch} from '../../actions/action';
 
@@ -15,13 +16,14 @@ class Navbar extends React.Component{
 
     handleAddToMovies = (movie) => {
 
-        // this.props.store.dispatch(addToMoviesList(movie));
+        this.props.addToMoviesList(movie);
     
     };
 
     handleSearchClick = () => {
         const { searchText } = this.state;
-        // this.props.store.dispatch(handleMovieSearch(searchText));
+        console.log(searchText);
+        this.props.handleMovieSearch(searchText);
     };
 
     handleChangeInSearchBox = (e) => {
@@ -33,9 +35,12 @@ class Navbar extends React.Component{
 
     render(){
 
+
+        console.log("props",this.props);
+
         const { showSearchResults } = this.props.search;
 
-        const result = this.props.result;
+        const result = this.props.search.result;
 
         return <div className = "navbar">
 
@@ -44,7 +49,7 @@ class Navbar extends React.Component{
            
 
             <input onChange={this.handleChangeInSearchBox} type="text" placeholder="Search here..."/>
-            {/* <button className = "navbarbtn" onClick={this.handleSearchClick}><img className="btnn" src={imag} alt="no-image"/></button> */}
+            <button className = "navbarbtn" onClick={this.handleSearchClick}><img className="btnn" src={imag} alt="no-image"/></button>
             </div>
 
         { showSearchResults &&
@@ -71,4 +76,21 @@ class Navbar extends React.Component{
        </div>
     }
 }
-export default Navbar;
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addToMoviesList: (movie) => {
+      dispatch(addToMoviesList(movie))
+    },
+     handleMovieSearch:(text)=>{
+      dispatch(handleMovieSearch(text))
+     }
+  }
+}
+
+
+function mapStateToProps(state) {
+  return {search:state.searchReducer };
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Navbar);
