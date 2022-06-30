@@ -17,7 +17,7 @@ function LoginUi() {
 
 
          </div>
-         <div>
+         <div style={{color:"black"}}>
            <h1>Login Page</h1>
            <div>
              <img src={email} alt="email" className="email"/>
