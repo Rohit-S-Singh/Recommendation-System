@@ -46,12 +46,18 @@ body {
 
 }
 
+
 .tabs button{
   background-color: #daa520;
   width: 100px;
   height:60px;
   border-width: 0px;
   border-radius: 5px;
+}
+
+.tabs button :hover{
+  background-color: blue;
+
 }
 
 .tabs{

@@ -1,37 +1,37 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+
 import { addfavourite , removefavourite} from '../../actions/action';
 
 class MovieCard extends React.Component{
     
     handlefavourite = (movie) => {
-        
-        // this.props.store.dispatch(addfavourite(movie));
+        this.props.addfavourite(movie);
     }
 
     handleUnfavourite = (movie) => {
-        
-        // this.props.store.dispatch(removefavourite(movie));    
+         this.props.removefavourite(movie);
     }
 
 
     isfavourite = (movie) => {  
         
-        // var a = this.props.store.getState().movies.favourites;
+        var a = this.props.favourites;
     
-        // var i =  a.indexOf(movie);
+        var i =  a.indexOf(movie);
     
-        // if(i===-1){
-        //     return 0;
-        // }
+        if(i===-1){
+            return 0;
+        }
 
-        // return 1;    
+        return 1;    
     }
 
 
     render(){
 
-        // console.log(this.props.movie);
+        // console.log()
 
         return <div className="list-item">
             
@@ -56,4 +56,22 @@ class MovieCard extends React.Component{
     }
 }
 
-export default MovieCard;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addfavourite : (movie) => {
+      dispatch(addfavourite (movie))
+    },removefavourite: (movie) => {
+      dispatch(removefavourite(movie))
+    }
+  }
+}
+
+
+function mapStateToProps(state) {
+  console.log("state ->>",state);
+  return { 
+    favourites:state.HomeReducer.favourites 
+};
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(MovieCard);

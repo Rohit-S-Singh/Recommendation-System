@@ -12,7 +12,6 @@ export const ADD_SEARCH_RESULT = "ADD_SEARCH_RESULT";
 
 
 export const addMovies=(movies)=>{
-    console.log("workingggggggg",movies);
     return{
         type:"ADD_MOVIES",
         movies : movies

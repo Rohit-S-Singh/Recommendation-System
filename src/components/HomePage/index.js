@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import Box from '../Navbar/navbar1';
 import Navbar from '../Search/navbar';
+import Tabs from '../Utility/Tabs'
 
 import{ movies } from '../../data'
 
@@ -48,8 +49,8 @@ class HomePage extends React.Component {
   }
 
   favouriteclicked(){
-
-    this.props.store.dispatch(showfav());
+    console.log("clicked me",this.props);
+    this.props.showfav();
 
   // showfav()
   
@@ -70,12 +71,16 @@ class HomePage extends React.Component {
   render(){
 
     var movies = this.props.homepage.movies;
+    var favourites = this.props.homepage.favourites;
 
-    // console.log("movvvvvvvvvviiiesss" , movies);
 
-    var curr_tab_movies =  this.props.homepage.showfavourite ? movies : movies;
+    console.log("movvvvvvvvvviiiesss" , favourites);
 
-    var activetab = this.props.homepage.showfavourite ? 2 : 1;
+    var curr_tab_movies =  this.props.homepage.showfavourite ? favourites:movies  ;
+
+    console.log("current movies" , curr_tab_movies);
+
+    var activetab = this.props.homepage.showfavourite ? 1 : 0;
 
     var i = 0;
 
@@ -85,12 +90,13 @@ class HomePage extends React.Component {
       <div className="App">
         {/* Hello World */}
         <Box/>
-        {/* <Navbar1></Navbar1> */}
          <Navbar   search = {this.props.search.showSearchResults}   results={this.props.search.results}/>
+        <Tabs func = {this.funct} func2 = {this.favouriteclicked} activetab = {activetab} ></Tabs>
+
          <div className = "tabs">
           <button  className ="show-movies" onClick = {()=>{this.funct()}}>Movies</button>
           <button className ="show-favourites" onClick = {()=>{this.favouriteclicked()}}>Favourites</button>
-        </div>
+        </div> 
         <div className="list">
          {curr_tab_movies.length === 0 ? <span>No movies to show..</span> :  curr_tab_movies.map((movie)=>{
            return <MovieCard movie = {movie} store = {this.props.store}  key={1 + ++i}/>
@@ -101,26 +107,15 @@ class HomePage extends React.Component {
   }
 }
 
-// export default App;
-// const mapStateToProps = function(state){
-
-//   return{
-
-//   }
-
-
-// }
-
-// function mapStateToProps(state) {
-//   // console.log("state ->>",state);
-//   return { homepage:state.HomeReducer };
-// }
-
 const mapDispatchToProps = (dispatch) => {
   return {
     show: () => {
       dispatch(showmov())
-    },add: (movie) => {
+    },
+     showfav:()=>{
+      dispatch(showfav())
+     },
+    add: (movie) => {
       dispatch(addMovies(movie))
     }
   }
