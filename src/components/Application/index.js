@@ -18,7 +18,6 @@ import HomePage from "../HomePage";
 
 class Application extends React.PureComponent {
   componentDidMount() {
-    console.log("mounted");
   }
 
   render() {
@@ -49,7 +48,6 @@ class Application extends React.PureComponent {
 
 const mapStateToProps = (state) => {
 
-  console.log("staate====>>", state);
   return {
   };
 };
