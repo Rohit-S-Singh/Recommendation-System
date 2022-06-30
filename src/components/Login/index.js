@@ -1,5 +1,5 @@
 import './LoginUi.css';
-import profile from "./image/pass.png";
+import profile from "./image/profile.jpg";
 import email from "./image/email.png";
 import pass from "./image/pass.png";
 function LoginUi() {
@@ -12,6 +12,8 @@ function LoginUi() {
              <img src={profile} alt="profile" className="profile"/>
 
            </div>
+  {/* const onFinish = (values) => {
+  }; */}
 
 
          </div>
@@ -23,7 +25,7 @@ function LoginUi() {
            </div>
            <div className="second-input">
              <img src={pass} alt="pass" className="email"/>
-             <input type="password" placeholder="user name" className="name"/>
+             <input type="password" placeholder=" password" className="name"/>
            </div>
           <div className="login-button">
           <button>Login</button>

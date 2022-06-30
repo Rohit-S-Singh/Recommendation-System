@@ -5,7 +5,9 @@ body {
   padding: 0px;
   /* background-image: url("./bg.jpg"); */
   color: white;
-  background-color:black;
+  background: rgba(0, 0, 0, 1) /* black background with 100% opacity */;
+  font-family: 'Nunito', sans-serif;
+
 
 }
 
@@ -46,12 +48,18 @@ body {
 
 }
 
+
 .tabs button{
   background-color: #daa520;
   width: 100px;
   height:60px;
   border-width: 0px;
   border-radius: 5px;
+}
+
+.tabs button :hover{
+  background-color: blue;
+
 }
 
 .tabs{
