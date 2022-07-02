@@ -1,56 +1,30 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-
 import Box from '../Navbar/navbar1';
+
 import Navbar from '../Search/navbar';
 import Tabs from '../Utility/Tabs'
 
-import{ movies } from '../../data'
+import { movies } from '../../data'
 
 import MovieCard from '../MovieCard/MovieCard';
-
 
 import {  showfav , showmov , addMovies} from '../../actions/action';
 import { searchReducer } from './reducer';
 
-
 class HomePage extends React.Component {
 
-
-
-
-
-  componentDidMount() {
-
-    // this.props.homepage.store.subscribe(() => this.setState({}))
-
-    // this.props.homepage.store.subscribe(() => this.setState({}))
+  componentDidMount(){
     this.props.add(movies);
-
-
-
-
-
-
-  
   }
 
   movieclicked(){
-    
     this.props.show();
-    // store.dispatch(showmov());
-
-  // showmov();
-
-
   }
 
   favouriteclicked(){
     this.props.showfav();
-
-  // showfav()
-  
   }
 
    handleButtonClick() {
@@ -58,27 +32,22 @@ class HomePage extends React.Component {
   }
 
 
-
   funct(){
     this.movieclicked();
      this.handleButtonClick();
-
   }
 
   render(){
 
     var movies = this.props.homepage.movies;
+    
     var favourites = this.props.homepage.favourites;
 
-
-
     var curr_tab_movies =  this.props.homepage.showfavourite ? favourites:movies  ;
-
 
     var activetab = this.props.homepage.showfavourite ? 1 : 0;
 
     var i = 0;
-
 
     return (
       <div className="App">
