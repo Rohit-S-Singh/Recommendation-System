@@ -11,7 +11,11 @@ import { useHistory } from "react-router-dom";
 
   const click = ()=>{
 
-    history.push(`/login`);
+    if(props.name == "Login")
+     history.push(`/login`);
+     else
+     history.push(`/signUp`);
+
   }  
   return (
       <Button variant="outlined" onClick = {()=>{click()}}>{props.name}</Button>
