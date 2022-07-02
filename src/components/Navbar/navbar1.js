@@ -1,5 +1,8 @@
 import * as React from 'react';
 import { styled, alpha } from '@mui/material/styles';
+
+import {connect} from 'react-redux';
+
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -15,6 +18,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import Buttonu from '../Button';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -56,8 +60,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function PrimarySearchAppBar() {
+const PrimarySearchAppBar = (props)=> {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const [loggedin, setAnchorE] = React.useState(0);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
   const isMenuOpen = Boolean(anchorEl);
@@ -154,6 +159,8 @@ export default function PrimarySearchAppBar() {
     </Menu>
   );
 
+  console.log("jknk", props);
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar style = {{backgroundColor :"black"}}position="static">
@@ -185,6 +192,7 @@ export default function PrimarySearchAppBar() {
             />
           </Search>
           <Box sx={{ flexGrow: 1 }} />
+            { loggedin == 1 &&
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="error">
@@ -211,7 +219,13 @@ export default function PrimarySearchAppBar() {
             >
               <AccountCircle />
             </IconButton>
+          </Box>}
+          <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
+          
+            {loggedin == 0 && <Buttonu name = "SignUp"></Buttonu>} &nbsp;&nbsp;&nbsp;
+            {loggedin == 0 && <Buttonu name = "Login"></Buttonu>}
           </Box>
+          
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -231,3 +245,7 @@ export default function PrimarySearchAppBar() {
     </Box>
   );
 }
+
+export default connect(null,null)(PrimarySearchAppBar);
+
+// export default PrimarySearchAppBar;
