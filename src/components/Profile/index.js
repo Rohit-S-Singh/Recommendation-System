@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Recommend from "../Recommend";
+import Rate from "../Rate";
 
 import UserProfile from "react-user-profile";
 class Profile extends Component {
@@ -37,6 +38,8 @@ class Profile extends Component {
         <br></br>
         &nbsp;&nbsp;&nbsp;&nbsp; Recommendations
         <Recommend></Recommend>
+        &nbsp;&nbsp;&nbsp;&nbsp; Rate
+        <Rate></Rate>
       </div>
     );
   }
