@@ -71,9 +71,9 @@ var initialMovieState = {
     search:initialSearchState
 }
 
-export default function RootReducer(state = initialMovieState , action){
-    return{
-        search: searchReducer(state.search, action),
-        movies:HomeReducer(state.movies, action)
-    } 
-}
+// export default function RootReducer(state = initialMovieState , action){
+//     return{
+//         search: searchReducer(state.search, action),
+//         movies:HomeReducer(state.movies, action)
+//     } 
+// }

@@ -13,7 +13,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Login from "../Login";
 import SignUp from "../SignUp";
 import HomePage from "../HomePage";
-import Profile from "../Profile";
+import User from "../User";
 // import Footer from "../../components/Common/Footer";
 // import Page404 from "../../components/Common/Page404";
 
@@ -33,7 +33,7 @@ class Application extends React.PureComponent {
                 <Route exact path="/" component={HomePage} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/SignUp" component={SignUp} />
-                <Route path="/user" component={Profile} />
+                <Route path="/user" component={User} />
                 {/* <Route path="/404" component={Page404} /> */}
                 <Route path="*" component={Login} />
               </Switch>

@@ -1,10 +1,18 @@
 import React, { Component } from "react";
+import {connect} from 'react-redux';
+
+import {addRating} from './actions';
+
+
 import Recommend from "../Recommend";
 import Rate from "../Rate";
 
 import UserProfile from "react-user-profile";
-class Profile extends Component {
+class User extends Component {
+
+
   render() {
+    console.log("UserState", this.props);
     const photo =
       "https://i.ibb.co/x241hkX/Pngtree-recommended-gesture-business-people-do-87455.png";
     const userName = "Payal Jain";
@@ -39,10 +47,23 @@ class Profile extends Component {
         &nbsp;&nbsp;&nbsp;&nbsp; Recommendations
         <Recommend></Recommend>
         &nbsp;&nbsp;&nbsp;&nbsp; Rate
-        <Rate></Rate>
+        <Rate addRating = {this.props.addRating}></Rate>
       </div>
     );
   }
 }
 
-export default Profile;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addRating: (movieRating) => {
+      dispatch(addRating(movieRating))
+    }
+  }
+}
+
+
+function mapStateToProps(state) {
+  return { user:state.UserReducer};
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(User);
