@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import {connect} from 'react-redux';
 
 import {addRating} from './actions';
-
-
 import Recommend from "../Recommend";
 import Rate from "../Rate";
 
