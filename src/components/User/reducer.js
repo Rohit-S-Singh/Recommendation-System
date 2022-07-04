@@ -7,8 +7,6 @@ var initialstate = {
     Recommendations:[]
 }
 
-
-
 export const UserReducer = (state = initialstate , action)=>{
 
     switch(action.type){
@@ -55,17 +53,7 @@ export function searchReducer(state = initialSearchState , action){
     
     switch(action.type){
 
-        case ADD_SEARCH_RESULT:
-            return{
-            ...state,
-            result : action.movie,
-            showSearchResults:true
-        };
-        case ADD_MOVIE_TO_LIST:
-            return{
-            ...state , 
-            showSearchResults:false
-        }
+      
 
         default:
         return state;
