@@ -3,6 +3,7 @@ import MovieCard from './components/MovieCard/MovieCard';
 import Navbar1 from './components/Navbar/navbar1';
 
 import {HomeReducer,searchReducer} from '../src/components/HomePage/reducer'
+import {UserReducer} from '../src/components/User/reducer'
 
 
 import Application from './components/Application';
@@ -58,7 +59,8 @@ let reducer = (state=0, action) => {
 const RootReducer = combineReducers({
   router: connectRouter(history),
   HomeReducer:HomeReducer,
-  searchReducer:searchReducer
+  searchReducer:searchReducer,
+  UserReducer:UserReducer,
 }
 );
 

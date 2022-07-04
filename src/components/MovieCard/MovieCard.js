@@ -7,6 +7,7 @@ import { addfavourite , removefavourite} from '../../actions/action';
 class MovieCard extends React.Component{
     
     handlefavourite = (movie) => {
+      console.log(this.props.addfavourite);
         this.props.addfavourite(movie);
     }
 
