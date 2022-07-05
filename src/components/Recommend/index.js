@@ -8,8 +8,9 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./style.css";
 import CsvCreator from "react-csv-creator";
+import {sendRatings} from './actions';
 
-const Recommend = ({ user, givenRatings }) => {
+const Recommend = ({ user, givenRatings,sendRatings }) => {
   const responsive = {
     desktop1: {
       breakpoint: { max: 3000, min: 1400 },
@@ -30,7 +31,7 @@ const Recommend = ({ user, givenRatings }) => {
     },
   };
 
-  useEffect( ()=>{console.log("change here")},[givenRatings]);
+  useEffect(()=>{sendRatings(givenRatings.givenRatings)},[givenRatings]);
 
   var temp_Products = [
     { image: "", description: "", price: "", sale: "", ratings: "", brand: "" },
@@ -51,14 +52,7 @@ const Recommend = ({ user, givenRatings }) => {
     },
   ];
 
-  const rows = [
-    // {
-    //   first: "1",
-    //   second: "2",
-    // },
-  ];
-
-  console.log()
+  const rows = [];
 
   var a = Object.keys(givenRatings.givenRatings);
 
@@ -100,10 +94,6 @@ const Recommend = ({ user, givenRatings }) => {
           // ref={carouselRef}
           responsive={responsive}
           arrows={true}
-          // customRightArrow={<CustomRight />}
-          // customLeftArrow={<CustomLeft />}
-          // renderButtonGroupOutside={false}
-          // showDots={window.screen.width < 2000 ? true : false}
         >
           {temp_Products.map((product, index) => {
             return (
@@ -124,14 +114,17 @@ const Recommend = ({ user, givenRatings }) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    // addRating: (movieRating) => {
-    //   dispatch(addRating(movieRating))
-    // }
+    sendRatings: (movieRating) => {
+      dispatch(sendRatings(movieRating))
+    }
+
   };
 };
 
 function mapStateToProps(state) {
-  return { user: state.UserReducer.Recommendations, givenRatings: state.UserReducer };
+  return { user: state.UserReducer.Recommendations,
+           givenRatings: state.UserReducer 
+ };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Recommend);
