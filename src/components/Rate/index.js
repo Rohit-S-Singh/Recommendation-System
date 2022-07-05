@@ -22,12 +22,10 @@ const Rate = (props)=> {
     { id:"15", name:"",image: "", description: "", rating: "", },
     { id:"16", name:"",image: "", description: "", rating: "", },
   ];
-  console.log(props.addRating);
   const ratingChanged = (movie,newRating) => {
   var rating = {};
   rating[movie.id] = newRating;
   
-  console.log(rating);
   props.addRating(rating);
 };
     return (

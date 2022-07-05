@@ -10,7 +10,7 @@ class User extends Component {
 
 
   render() {
-    console.log("UserState", this.props);
+  
     const photo =
       "https://i.ibb.co/x241hkX/Pngtree-recommended-gesture-business-people-do-87455.png";
     const userName = "Payal Jain";

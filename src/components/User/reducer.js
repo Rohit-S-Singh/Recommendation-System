@@ -3,7 +3,7 @@ import { ADD_RATING} from "./actions";
 var initialstate = {
     name:"",
     followers:[],
-    givenRatings:{},
+    givenRatings:{a:"4",b:"9"},
     Recommendations:[]
 }
 

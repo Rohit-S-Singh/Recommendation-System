@@ -2,7 +2,7 @@ export const ADD_RATING = "ADD_RATING";
 
 
 export function addRating(movieRating){
-    console.log("movieRatingss",movieRating);
+   
     return{
         type:"ADD_RATING",
         payload:movieRating
