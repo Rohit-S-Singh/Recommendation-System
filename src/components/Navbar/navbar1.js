@@ -159,7 +159,6 @@ const PrimarySearchAppBar = (props)=> {
     </Menu>
   );
 
-  console.log("jknk", props);
 
   return (
     <Box sx={{ flexGrow: 1 }}>

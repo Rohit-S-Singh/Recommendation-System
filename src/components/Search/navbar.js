@@ -22,7 +22,7 @@ class Navbar extends React.Component{
 
     handleSearchClick = () => {
         const { searchText } = this.state;
-        console.log(searchText);
+     
         this.props.handleMovieSearch(searchText);
     };
 
@@ -36,7 +36,7 @@ class Navbar extends React.Component{
     render(){
 
 
-        console.log("props",this.props);
+    
 
         const { showSearchResults } = this.props.search;
 
