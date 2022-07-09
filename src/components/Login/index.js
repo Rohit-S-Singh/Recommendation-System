@@ -1,48 +1,61 @@
-import './LoginUi.css';
-import profile from "./image/profile.jpg";
-import email from "./image/email.png";
-import pass from "./image/pass.png";
-function LoginUi() {
-  return (
-    <div className="main">
-     <div className="sub-main">
-       <div>
-         <div className="imgs">
-           <div className="container-image">
-             <img src={profile} alt="profile" className="profile"/>
+import React, { Component } from "react";
+import { HashRouter as Router, Route, NavLink } from "react-router-dom";
+import SignUpForm from "./pages/SignUpForm";
+import SignInForm from "./pages/SignInForm";
 
-           </div>
-  {/* const onFinish = (values) => {
-  }; */}
+import "./App.css";
 
+class Login extends Component {
+  render() {
+    return (
+      <Router basename="/react-auth-ui/">
+        <div className="Appp">
+          <div className="appAside" />
+          <div className="appForm">
+            <div className="pageSwitcher">
+              <NavLink
+                to="/sign-in"
+                activeClassName="pageSwitcherItem-active"
+                className="pageSwitcherItem"
+              >
+                Sign In
+              </NavLink>
+              <NavLink
+                exact
+                to="/"
+                activeClassName="pageSwitcherItem-active"
+                className="pageSwitcherItem"
+              >
+                Sign Up
+              </NavLink>
+            </div>
 
-         </div>
-         <div style={{color:"black"}}>
-           <h1>Login Page</h1>
-           <div>
-             <img src={email} alt="email" className="email"/>
-             <input type="text" placeholder="user name" className="name"/>
-           </div>
-           <div className="second-input">
-             <img src={pass} alt="pass" className="email"/>
-             <input type="password" placeholder=" password" className="name"/>
-           </div>
-          <div className="login-button">
-          <button>Login</button>
+            <div className="formTitle">
+              <NavLink
+                to="/sign-in"
+                activeClassName="formTitleLink-active"
+                className="formTitleLink"
+              >
+                Sign In
+              </NavLink>{" "}
+              or{" "}
+              <NavLink
+                exact
+                to="/"
+                activeClassName="formTitleLink-active"
+                className="formTitleLink"
+              >
+                Sign Up
+              </NavLink>
+            </div>
+
+            <Route exact path="/" component={SignUpForm} />
+            <Route path="/sign-in" component={SignInForm} />
           </div>
-           
-            <p className="link">
-              <a href="#">Forgot password ?</a> Or <a href="#">Sign Up</a>
-            </p>
-           
- 
-         </div>
-       </div>
-       
-
-     </div>
-    </div>
-  );
+        </div>
+      </Router>
+    );
+  }
 }
 
-export default LoginUi;
+export default Login;

@@ -179,7 +179,7 @@ const PrimarySearchAppBar = (props)=> {
             component="div"
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
+            Movie Application
           </Typography>
           <Search>
             <SearchIconWrapper>
