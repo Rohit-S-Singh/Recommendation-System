@@ -1,11 +1,18 @@
 export const ADD_RATING = "ADD_RATING";
-
+export const ADD_RECOMMENDATIONS = "ADD_RECOMMENDATIONS";
 
 export function addRating(movieRating){
    
     return{
         type:"ADD_RATING",
         payload:movieRating
+    }
+}
+export function addRecommendations(data){
+   
+    return{
+        type:"ADD_RECOMMENDATIONS",
+        payload:data
     }
 }
 

@@ -42,7 +42,7 @@ class User extends Component {
         <br></br>
         <br></br>
         <br></br>
-        &nbsp;&nbsp;&nbsp;&nbsp; Recommendations
+        {/* &nbsp;&nbsp;&nbsp;&nbsp; Recommendations */}
         <Recommend></Recommend>
         &nbsp;&nbsp;&nbsp;&nbsp; Rate
         <Rate addRating = {this.props.addRating}></Rate>
