@@ -1,4 +1,5 @@
 import { ADD_RATING} from "./actions";
+import {ADD_RECOMMENDATIONS} from "./actions";
 
 var initialstate = {
     name:"",
@@ -33,10 +34,10 @@ export const UserReducer = (state = initialstate , action)=>{
     //     case SHOW_MOVIE:
     //         return {...state , showfavourite:false};
         
-    //     case ADD_MOVIE_TO_LIST:
-    //     return{
-    //         ...state , movies:[action.movie , ...state.movies]
-    //     }
+        case ADD_RECOMMENDATIONS:
+        return{
+            ...state ,Recommendations :[...state.Recommendations,action.payload]
+        }
 
         default:
             return state;

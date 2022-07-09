@@ -1,16 +1,14 @@
 import * as React from "react";
 import { connect } from "react-redux";
-import { Fragment } from "react";
 import Card from "../MovieCard/Card";
 import { useEffect } from "react";
-// import { MDBBtn } from "mdbreact";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./style.css";
 import CsvCreator from "react-csv-creator";
 import {sendRatings} from './actions';
 
-const Recommend = ({ user, givenRatings,sendRatings }) => {
+const Recommend = ({ user, givenRatings, getRecommendations }) => {
   const responsive = {
     desktop1: {
       breakpoint: { max: 3000, min: 1400 },
@@ -31,7 +29,8 @@ const Recommend = ({ user, givenRatings,sendRatings }) => {
     },
   };
 
-  useEffect(()=>{sendRatings(givenRatings.givenRatings)},[givenRatings]);
+  // useEffect(()=>{sendRatings(givenRatings.givenRatings)},[givenRatings]);
+
 
   var temp_Products = [
     { image: "", description: "", price: "", sale: "", ratings: "", brand: "" },
@@ -41,16 +40,6 @@ const Recommend = ({ user, givenRatings,sendRatings }) => {
   ];
 
   console.log("Ratings given are" , givenRatings.givenRatings);
-  const headers = [
-    {
-      id: "first",
-      display: "Payal",
-    },
-    {
-      id: "second",
-      display: "Rohit",
-    },
-  ];
 
   const rows = [];
 
@@ -66,23 +55,17 @@ const Recommend = ({ user, givenRatings,sendRatings }) => {
 
   console.log("rowwsss",rows);
 
-//   var ratings = {
-//     payal:{
-
-//     },
-//     rohit:{
-
-//     }
-// }
 
   return (
     <div>
-      <CsvCreator filename="my_cool_csv" headers={headers} rows={rows}>
+      {/* <CsvCreator filename="my_cool_csv" headers={headers} rows={rows}>
         <p>Download CSV</p>
-      </CsvCreator>
+      </CsvCreator> */}
       <div style={{ display: "flex", justifyContent: "space-around" }}>
         {user.length == 0 && (
-          <button style={{ color: "white" }} class="custom-btn btn-13">
+          <button onClick={()=>{
+             getRecommendations(user.givenRatings);
+          }}  style={{ color: "white" }} class="custom-btn btn-13">
             Get Recommendations
           </button>
         )}
@@ -114,7 +97,7 @@ const Recommend = ({ user, givenRatings,sendRatings }) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    sendRatings: (movieRating) => {
+    getRecommendations: (movieRating) => {
       dispatch(sendRatings(movieRating))
     }
 
