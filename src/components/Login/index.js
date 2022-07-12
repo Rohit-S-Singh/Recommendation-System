@@ -73,6 +73,7 @@ const Login = (props)=> {
            <ToastContainer
               position="top-right"
               autoClose={5000}
+              theme="colored"
               hideProgressBar={false}
               newestOnTop={false}
               closeOnClick
