@@ -6,6 +6,8 @@ import {HomeReducer,searchReducer} from '../src/components/HomePage/reducer'
 import {UserReducer} from '../src/components/User/reducer'
 
 
+import {NotificationsProvider} from 'reapop'
+
 import Application from './components/Application';
 import { createBrowserHistory } from 'history';
 import {  combineReducers} from 'redux';
@@ -71,7 +73,9 @@ var store = createStore(RootReducer , applyMiddleware( thunk ) );
 const app = () => (
   <Provider store={store}>
     <ConnectedRouter history={history} >
+      <NotificationsProvider>
         <Application />
+        </NotificationsProvider>
     </ConnectedRouter>
   </Provider>
 );

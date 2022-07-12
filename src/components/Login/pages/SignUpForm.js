@@ -1,9 +1,13 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import {useNotifications} from 'reapop'
+
+
+
 class SignUpForm extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       email: "",
@@ -15,6 +19,7 @@ class SignUpForm extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
 
   handleChange(event) {
     let target = event.target;
@@ -29,11 +34,20 @@ class SignUpForm extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
+    console.log("abcdefghijklmnopqrstuv",this.props);
+
+    this.props.signUp(this.state,this.props.notify);
+
     console.log("The form was submitted with the following data:");
     console.log(this.state);
+
+    // this.props.notify('Signed up succesfully');
+    // console.log("this props notify",this.props.notify);
+    // ('Welcome to the documentation', 'info');
   }
 
   render() {
+  console.log(this.props.text);
     return (
       <div className="formCenter">
         <form onSubmit={this.handleSubmit} className="formFields">
