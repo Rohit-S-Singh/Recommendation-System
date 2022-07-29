@@ -5,8 +5,17 @@ import { useEffect } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./style.css";
-import CsvCreator from "react-csv-creator";
-import {sendRatings} from './actions';
+import { useState, CSSProperties } from "react";
+import PuffLoader from "react-spinners/PuffLoader";
+import MoonLoader from "react-spinners/MoonLoader";
+
+import { sendRatings } from "./actions";
+
+const override: CSSProperties = {
+  display: "block",
+  margin: "0 auto",
+  borderColor: "red",
+};
 
 const Recommend = ({ user, givenRatings, getRecommendations }) => {
   const responsive = {
@@ -29,32 +38,37 @@ const Recommend = ({ user, givenRatings, getRecommendations }) => {
     },
   };
 
-  // useEffect(()=>{sendRatings(givenRatings.givenRatings)},[givenRatings]);
+  let [loading, setLoading] = useState(true);
+  let [color, setColor] = useState("#ffffff");
 
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 8000);
+  }, []);
 
   var temp_Products = [
     { image: "", description: "", price: "", sale: "", ratings: "", brand: "" },
     { image: "", description: "", price: "", sale: "", ratings: "", brand: "" },
     { image: "", description: "", price: "", sale: "", ratings: "", brand: "" },
-
   ];
 
-  console.log("Ratings given are" , givenRatings.givenRatings);
+  console.log("Ratings given are", givenRatings.givenRatings);
 
   const rows = [];
 
   var a = Object.keys(givenRatings.givenRatings);
 
-  for(let i = 0; i < a.length ; i++){
-    var obj={};
+  for (let i = 0; i < a.length; i++) {
+    var obj = {};
     obj["first"] = givenRatings.givenRatings[a[i]];
     obj["second"] = givenRatings.givenRatings[a[i]];
 
     rows.push(obj);
   }
 
-  console.log("rowwsss",rows);
-
+  console.log("rowwsss", rows);
 
   return (
     <div>
@@ -63,51 +77,63 @@ const Recommend = ({ user, givenRatings, getRecommendations }) => {
       </CsvCreator> */}
       <div style={{ display: "flex", justifyContent: "space-around" }}>
         {user.length == 0 && (
-          <button onClick={()=>{
-             getRecommendations(user.givenRatings);
-          }}  style={{ color: "white" }} class="custom-btn btn-13">
+          <button
+            onClick={() => {
+              getRecommendations(user.givenRatings);
+            }}
+            style={{ color: "white" }}
+            class="custom-btn btn-13"
+          >
             Get Recommendations
           </button>
         )}
       </div>
       <br></br>
       <br></br>
-      {user.length != 0 && (
-        <Carousel
-          // ref={carouselRef}
-          responsive={responsive}
-          arrows={true}
-        >
-          {temp_Products.map((product, index) => {
-            return (
-              <Card
-                image="aa"
-                description="abc."
-                price="22"
-                sale=""
-                ratings="5"
-                brand="Yellow"
-              />
-            );
-          })}
-        </Carousel>
-      )}
+      {user.length != 0 &&
+        (loading ? (
+          <PuffLoader
+            color={color}
+            loading={loading}
+            cssOverride={override}
+            size={70}
+          />
+        ) : (
+          <Carousel
+            // ref={carouselRef}
+            responsive={responsive}
+            arrows={true}
+          >
+            {temp_Products.map((product, index) => {
+              return (
+                <Card
+                  image="aa"
+                  description="abc."
+                  price="22"
+                  sale=""
+                  ratings="5"
+                  brand="Yellow"
+                />
+              );
+            })}
+          </Carousel>
+        ))}
     </div>
   );
 };
 const mapDispatchToProps = (dispatch) => {
   return {
     getRecommendations: (movieRating) => {
-      dispatch(sendRatings(movieRating))
-    }
-
+      dispatch(sendRatings(movieRating));
+    },
   };
 };
 
 function mapStateToProps(state) {
-  return { user: state.UserReducer.Recommendations,
-           givenRatings: state.UserReducer 
- };
+  return {
+    user: state.UserReducer.Recommendations,
+    givenRatings: state.UserReducer,
+  };
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Recommend);
