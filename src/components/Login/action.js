@@ -43,7 +43,7 @@ export const signUp = (user,notify) => {
   return async (dispatch, getState) => {
     try {
 
-      cons
+      console.log("abcd");
       const response = await axios.post("http://localhost:8000"+'/api/auth/register',user);
 
           notify.success(response.data.message, {
@@ -62,15 +62,8 @@ export const signUp = (user,notify) => {
         autoDismiss: 5
       };
 
-    //   dispatch(success(successfulOptions));
-
-
-    //   localStorage.setItem('email',response.data.email);
-    //   localStorage.setItem('name',response.data.name);
-    
-    //   history.push("/verify");
-
     }catch (error) {
+      console.log("hjvjj", error);
       const title = `Please try to signup again!`;
 
       notify.error(error.response.data.error, {

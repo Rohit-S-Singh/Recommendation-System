@@ -107,7 +107,7 @@ const Login = (props) => {
       {loggedin ? (
         <Redirect to="/" />
       ) : (
-        <PublicHomePage signUp={SignUp} login={login} />
+        <PublicHomePage signUp={signUp} login={login} />
       )}
     </div>
   );
