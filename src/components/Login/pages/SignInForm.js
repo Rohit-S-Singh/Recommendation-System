@@ -5,9 +5,11 @@ import {
   InstagramLoginButton
 } from "react-social-login-buttons";
 
+// import {login} from '../../Login/action'
+
 class SignInForm extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       email: "",
@@ -31,8 +33,8 @@ class SignInForm extends Component {
   handleSubmit(event) {
     event.preventDefault();
 
-    console.log("The form was submitted with the following data:");
-    console.log(this.state);
+    this.props.login(this.state.email,this.state.password);
+
   }
 
   render() {

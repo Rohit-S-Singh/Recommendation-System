@@ -11,7 +11,7 @@ import MoonLoader from "react-spinners/MoonLoader";
 
 import { sendRatings } from "./actions";
 
-const override: CSSProperties = {
+const override = {
   display: "block",
   margin: "0 auto",
   borderColor: "red",
@@ -54,8 +54,6 @@ const Recommend = ({ user, givenRatings, getRecommendations }) => {
     { image: "", description: "", price: "", sale: "", ratings: "", brand: "" },
   ];
 
-  console.log("Ratings given are", givenRatings.givenRatings);
-
   const rows = [];
 
   var a = Object.keys(givenRatings.givenRatings);
@@ -67,8 +65,6 @@ const Recommend = ({ user, givenRatings, getRecommendations }) => {
 
     rows.push(obj);
   }
-
-  console.log("rowwsss", rows);
 
   return (
     <div>

@@ -1,19 +1,17 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux';
 
-import {addRating} from './actions';
+import {addRating, SetRating} from './actions';
 import Recommend from "../Recommend";
 import Rate from "../Rate";
 
 import UserProfile from "react-user-profile";
-class User extends Component {
-
-
-  render() {
+const User = (props)=>{
   
+
     const photo =
       "https://i.ibb.co/x241hkX/Pngtree-recommended-gesture-business-people-do-87455.png";
-    const userName = "Payal Jain";
+    const userName = "User Name";
     const location = "New York, USA";
 
     const comments = [
@@ -32,11 +30,11 @@ class User extends Component {
       <div style={{ margin: "0 auto", width: "100%" }}>
         <UserProfile
           photo={photo}
-          userName={userName}
+          userName="ojnk"
           location={location}
-          initialLikesCount={121}
-          initialFollowingCount={723}
-          initialFollowersCount={4433}
+          initialLikesCount={0}
+          initialFollowingCount={0}
+          initialFollowersCount={1}
           initialComments={comments}
         />
         <br></br>
@@ -45,16 +43,18 @@ class User extends Component {
         {/* &nbsp;&nbsp;&nbsp;&nbsp; Recommendations */}
         <Recommend></Recommend>
         &nbsp;&nbsp;&nbsp;&nbsp; Rate
-        <Rate addRating = {this.props.addRating}></Rate>
+        <Rate user = {props.user} SetRating = {props.SetRating} addRating = {props.addRating}></Rate>
       </div>
     );
   }
-}
 
 const mapDispatchToProps = (dispatch) => {
   return {
     addRating: (movieRating) => {
       dispatch(addRating(movieRating))
+    },
+    SetRating: (user) => {
+      dispatch(SetRating(user))
     }
   }
 }
