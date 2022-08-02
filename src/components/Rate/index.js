@@ -32,6 +32,8 @@ const Rate = (props) => {
     rating[movie.id] = newRating;
 
     props.addRating(rating);
+    props.SetRating(props.user);
+  
   };
   return (
     <div>

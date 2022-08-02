@@ -2,8 +2,9 @@ import { ADD_RATING} from "./actions";
 import {ADD_RECOMMENDATIONS} from "./actions";
 
 var initialstate = {
+    id:"",
     name:"",
-    followers:[],
+    followers:"",
     givenRatings:{a:"4",b:"9"},
     Recommendations:[]
 }
@@ -16,7 +17,6 @@ export const UserReducer = (state = initialstate , action)=>{
             Object.keys(a).map( (k)=>{
                 state.givenRatings[k] = action.payload[k];
             } )
-            console.log("State",state.givenRatings);
             return {...state};   
 
     //     case ADD_FAVOURITES:

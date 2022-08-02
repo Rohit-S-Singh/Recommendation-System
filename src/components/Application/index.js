@@ -17,29 +17,32 @@ import User from "../User";
 // import Footer from "../../components/Common/Footer";
 // import Page404 from "../../components/Common/Page404";
 
+import actions from "../../actions";
+
 class Application extends React.PureComponent {
-  componentDidMount() {
+  constructor(props) {
+    super(props);
   }
 
+  componentDidMount() {}
+
   render() {
+    console.log("authenticated", this.props.authenticated);
     return (
       <div className="application">
         <main className="main">
           {/* <Container> */}
-            <div className="wrapper">
-           <BrowserRouter>
-
+          <div className="wrapper">
+            <BrowserRouter>
               <Switch>
                 <Route exact path="/" component={HomePage} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/SignUp" component={SignUp} />
                 <Route path="/user" component={User} />
-                {/* <Route path="/404" component={Page404} /> */}
                 <Route path="*" component={Login} />
               </Switch>
-           </BrowserRouter>
-
-            </div>
+            </BrowserRouter>
+          </div>
           {/* </Container> */}
         </main>
         {/* <Footer /> */}
@@ -49,9 +52,9 @@ class Application extends React.PureComponent {
 }
 
 const mapStateToProps = (state) => {
-
   return {
+    authenticated: state.authReducer.authenticated,
   };
 };
 
-export default connect(mapStateToProps)(Application);
+export default connect(mapStateToProps, actions)(Application);

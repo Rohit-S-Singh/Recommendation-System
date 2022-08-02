@@ -2,12 +2,16 @@ export const ADD_RATING = "ADD_RATING";
 export const ADD_RECOMMENDATIONS = "ADD_RECOMMENDATIONS";
 
 export function addRating(movieRating){
+
    
     return{
         type:"ADD_RATING",
         payload:movieRating
     }
 }
+
+
+
 export function addRecommendations(data){
    
     return{
@@ -56,6 +60,16 @@ export function addToMoviesList(movie){
         movie
     }
 }
+export const SetRating = (user) => {
+  return async (dispatch, getState) => {
+
+
+    const givenRatings = user.givenRatings;
+    const userId = user.id;
+    
+    // console.log("vrevrebeb",givenRatings);
+
+}};
 
 export function handleMovieSearch(movie){
 

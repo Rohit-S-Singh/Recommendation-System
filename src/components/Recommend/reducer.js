@@ -15,7 +15,6 @@ export const UserReducer = (state = initialstate , action)=>{
             Object.keys(a).map( (k)=>{
                 state.givenRatings[k] = action.payload[k];
             } )
-            console.log("State",state.givenRatings);
             return {...state};    
         default:
             return state;

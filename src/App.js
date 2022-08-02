@@ -1,9 +1,6 @@
-import Navbar from './components/Search/navbar';
-import MovieCard from './components/MovieCard/MovieCard';
-import Navbar1 from './components/Navbar/navbar1';
-
 import {HomeReducer,searchReducer} from '../src/components/HomePage/reducer'
 import {UserReducer} from '../src/components/User/reducer'
+import authReducer from '../src/components/Authentication/reducers'
 
 
 import {NotificationsProvider} from 'reapop'
@@ -11,21 +8,17 @@ import {NotificationsProvider} from 'reapop'
 import Application from './components/Application';
 import { createBrowserHistory } from 'history';
 import {  combineReducers} from 'redux';
-
 import { Provider } from "react-redux";
 import { ConnectedRouter } from "connected-react-router";
-import { connectRouter } from 'connected-react-router'
+// import { connectRouter } from 'connected-react-router'
+
+
+import createReducer from './reducers';
 
 
 
 import {  showfav , showmov } from './actions/action';
 
-
-// import RootReducer from '../reducer/reducers';
-
-// import {data} from './data';
-
-// import { addMovies } from './actions/action';
 
 import  { createStore , applyMiddleware } from 'redux';
 
@@ -57,17 +50,22 @@ let reducer = (state=0, action) => {
     default: return state
   }
 }
-
-const RootReducer = combineReducers({
-  router: connectRouter(history),
-  HomeReducer:HomeReducer,
-  searchReducer:searchReducer,
-  UserReducer:UserReducer,
-}
+// // 
+// const RootReducer = combineReducers({
+//   router: connectRouter(history),
+//   HomeReducer:HomeReducer,
+//   searchReducer:searchReducer,
+//   UserReducer:UserReducer,
+//   authReducer:authReducer,
+// }
+// );
+const store = createStore(
+  createReducer(history),
+  applyMiddleware( thunk )
 );
 
 
-var store = createStore(RootReducer , applyMiddleware( thunk ) );
+// var store = createStore(RootReducer , applyMiddleware( thunk ) );
 
 
 const app = () => (

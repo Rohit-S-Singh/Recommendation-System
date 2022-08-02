@@ -62,8 +62,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 const PrimarySearchAppBar = (props)=> {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const [loggedin, setAnchorE] = React.useState(0);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+
+
+  const {loggedin} = props;
+
+  console.log("authenticated", loggedin);
 
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -245,6 +249,22 @@ const PrimarySearchAppBar = (props)=> {
   );
 }
 
-export default connect(null,null)(PrimarySearchAppBar);
+// export default connect(null,null)(PrimarySearchAppBar);
 
-// export default PrimarySearchAppBar;
+const mapDispatchToProps = (dispatch) => {
+  return {
+  //   signUp: (user,notify) => {
+  //     dispatch(signUp(user,notify))
+  //   },
+  //   login: (username,password) => {
+  //     dispatch(login(username,password))
+  //   }
+  };
+};
+
+function mapStateToProps(state) {
+  return { loggedin: state.authReducer.authenticated,
+  };
+}
+
+export default connect(mapStateToProps, null)(PrimarySearchAppBar);

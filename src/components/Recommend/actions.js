@@ -3,7 +3,6 @@ import { addRecommendations } from "../User/actions";
 // export const SEND_RATING = "SEND_RATING";
 
 export const sendRatings = (rating) => {
-  console.log(rating);
   return async (dispatch) => {
     try {
       let formData = new FormData();
@@ -35,12 +34,10 @@ export const sendRatings = (rating) => {
           },
         }
       );
-      console.log("response coming!", response.data.data);
       dispatch(addRecommendations(response.data.data));
 
 
     } catch (e) {
-      console.log(e);
     }
   };
 };

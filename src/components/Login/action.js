@@ -18,7 +18,7 @@ import {
   SET_SIGNUP_FORM_ERRORS
 } from './contants';
 
-// import { setAuth } from '../Authentication/actions';
+import { setAuth } from '../Authentication/actions';
 // import setToken from '../../utils/token';
 // import handleError from '../../utils/error';
 // import { allFieldsValidation } from '../../utils/validation';
@@ -42,60 +42,17 @@ export const subscribeChange = () => {
 export const signUp = (user,notify) => {
   return async (dispatch, getState) => {
     try {
-    //   const rules = {
-    //     email: 'required|email',
-    //     password: 'required|min:6',
-    //     firstName: 'required',
-    //     lastName: 'required'
-    //   };
-
-    // console.log("fvfdvdfvfdvdfvdfvdfv",notify);
-    // console.log("notifffy",user);
-
-
-    //   const newUser = getState().signup.signupFormData;
-    //   const isSubscribed = getState().signup.isSubscribed;
-
-      
-
-    //   const { isValid, errors } = allFieldsValidation(newUser, rules, {
-    //     'required.email': 'Email is required.',
-    //     'required.password': 'Password is required.',
-    //     'required.firstName': 'First Name is required.',
-    //     'required.lastName': 'Last Name is required.'
-    //   });
-
-    //   if (!isValid) {
-    //     return dispatch({ type: SET_SIGNUP_FORM_ERRORS, payload: errors });
-    //   }
-
-    //   dispatch({type: SET_SIGNUP_SUBMITTING, payload: true});
-    //   dispatch({type: SET_SIGNUP_LOADING, payload: true});
-
-    //   const user = {
-    //     ...newUser
-    //   };
-
-      console.log("userrrrrr",user);
-
-
       const response = await axios.post("http://localhost:8000"+'/api/auth/register',user);
 
-
-
-    //   notify(response.data.message);
-      notify.success(response.data.message, {
-position: "top-right",
-autoClose: 5000,
-hideProgressBar: false,
-closeOnClick: true,
-pauseOnHover: true,
-draggable: true,
-progress: undefined,
-});
-
-
-      console.log(response);
+          notify.success(response.data.message, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+      });
 
       const successfulOptions = {
         title: `You have signed up successfully! You will be receiving an email as well. Thank you!`,
@@ -115,14 +72,14 @@ progress: undefined,
       const title = `Please try to signup again!`;
 
       notify.error(error.response.data.error, {
-position: "top-right",
-autoClose: 5000,
-hideProgressBar: false,
-closeOnClick: true,
-pauseOnHover: true,
-draggable: true,
-progress: undefined,
-});
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+              });
 
     //   console.log("errrorr    ",error.response.data.error);
     //   handleError(error, dispatch, title);
@@ -132,3 +89,87 @@ progress: undefined,
     }
   };
 };
+
+export const signOut = () => {
+  return (dispatch, getState) => {
+    const successfulOptions = {
+      title: `You have signed out!`,
+      position: 'tr',
+      autoDismiss: 5
+    };
+
+    // dispatch(clearAuth());
+    dispatch(clearAccount());
+    dispatch(push('/login'));
+
+    localStorage.removeItem('token');
+
+    dispatch(success(successfulOptions));
+    // dispatch(clearCart());
+  };
+};
+
+
+
+export const login = (email,password) => {
+  return async (dispatch, getState) => {
+
+    // const rules = {
+    //   email: 'required|email',
+    //   password: 'required|min:6'
+    // };
+
+    // const user = getState().login.loginFormData;
+
+    // const { isValid, errors } = allFieldsValidation(user, rules, {
+    //   'required.email': 'Email is required.',
+    //   'email.email': 'Email format is invalid.',
+    //   'required.password': 'Password is required.',
+    //   'min.password': 'Password must be at least 6 characters.'
+    // });
+
+    // if (!isValid) {
+    //   return dispatch({ type: SET_LOGIN_FORM_ERRORS, payload: errors });
+    // }
+
+    // dispatch({ type: SET_LOGIN_SUBMITTING, payload: true });
+    // dispatch({ type: SET_LOGIN_LOADING, payload: true });
+
+    var user = {
+      "email":email,
+     "password":password
+    }
+
+    try {
+      const response = await axios.post("http://localhost:8000"+'/api/auth/login', user);
+
+
+      console.log(response.data);
+
+      // const firstName = response.data.user.firstName;
+
+      // const successfulOptions = {
+      //   title: `Hey${firstName ? ` ${firstName}` : ''}, Welcome Back!`,
+      //   position: 'tr',
+      //   autoDismiss: 5
+      // };
+
+      // localStorage.setItem('token', response.data.token);
+
+      // setToken(response.data.token);
+
+      dispatch(setAuth());
+
+      // dispatch(success(successfulOptions));
+
+      // dispatch({ type: LOGIN_RESET });
+    } catch (error) {
+      const title = `Please try to login again!`;
+      // handleError(error, dispatch, title);
+    } finally {
+      // dispatch({ type: SET_LOGIN_SUBMITTING, payload: false });
+      // dispatch({ type: SET_LOGIN_LOADING, payload: false });
+    }
+  };
+};
+
