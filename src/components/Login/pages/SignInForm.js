@@ -78,15 +78,6 @@ class SignInForm extends Component {
             </Link>
           </div>
 
-          <div className="socialMediaButtons">
-            <div className="facebookButton">
-              <FacebookLoginButton onClick={() => alert("Hello")} />
-            </div>
-
-            <div className="instagramButton">
-              <InstagramLoginButton onClick={() => alert("Hello")} />
-            </div>
-          </div>
         </form>
       </div>
     );
@@ -94,3 +85,13 @@ class SignInForm extends Component {
 }
 
 export default SignInForm;
+
+          // <div className="socialMediaButtons">
+          //   <div className="facebookButton">
+          //     <FacebookLoginButton onClick={() => alert("Hello")} />
+          //   </div>
+
+          //   <div className="instagramButton">
+          //     <InstagramLoginButton onClick={() => alert("Hello")} />
+          //   </div>
+          // </div>
