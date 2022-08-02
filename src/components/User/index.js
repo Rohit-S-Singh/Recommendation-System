@@ -30,7 +30,7 @@ const User = (props)=>{
       <div style={{ margin: "0 auto", width: "100%" }}>
         <UserProfile
           photo={photo}
-          userName={userName}
+          userName="ojnk"
           location={location}
           initialLikesCount={0}
           initialFollowingCount={0}

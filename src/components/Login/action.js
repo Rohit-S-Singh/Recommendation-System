@@ -42,6 +42,8 @@ export const subscribeChange = () => {
 export const signUp = (user,notify) => {
   return async (dispatch, getState) => {
     try {
+
+      cons
       const response = await axios.post("http://localhost:8000"+'/api/auth/register',user);
 
           notify.success(response.data.message, {
