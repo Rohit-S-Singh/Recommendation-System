@@ -18,6 +18,7 @@ import {
   SET_SIGNUP_FORM_ERRORS,
 } from "./contants";
 
+import { setUser} from "../User/actions";
 import { setAuth } from "../Authentication/actions";
 // import setToken from '../../utils/token';
 // import handleError from '../../utils/error';
@@ -42,7 +43,7 @@ export const subscribeChange = () => {
 export const signUp = (user, notify) => {
   return async (dispatch, getState) => {
     try {
-      console.log("strtaaaaaaaaaaa");
+      console.log("abcd",user);
       const response = await axios.post(
         "http://localhost:8000" + "/api/auth/register",
         user
@@ -63,14 +64,8 @@ export const signUp = (user, notify) => {
         position: "tr",
         autoDismiss: 5,
       };
-
-      //   dispatch(success(successfulOptions));
-
-      //   localStorage.setItem('email',response.data.email);
-      //   localStorage.setItem('name',response.data.name);
-
-      //   history.push("/verify");
     } catch (error) {
+      console.log("hjvjj", error);
       const title = `Please try to signup again!`;
 
       notify.error(error.response.data.error, {
@@ -144,10 +139,14 @@ export const login = (email, password) => {
         "http://localhost:8000" + "/api/auth/login",
         user
       );
+      
 
       console.log(response.data);
 
-      // const firstName = response.data.user.firstName;
+      console.log(setUser);
+      dispatch(setUser(response.data.user));
+
+      // console.log(firstName);
 
       // const successfulOptions = {
       //   title: `Hey${firstName ? ` ${firstName}` : ''}, Welcome Back!`,

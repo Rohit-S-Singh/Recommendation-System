@@ -17,7 +17,7 @@ const override = {
   borderColor: "red",
 };
 
-const Recommend = ({ user, givenRatings, getRecommendations }) => {
+const Recommend = ({ user, givenRatings, getRecommendations , name}) => {
   const responsive = {
     desktop1: {
       breakpoint: { max: 3000, min: 1400 },
@@ -129,6 +129,7 @@ function mapStateToProps(state) {
   return {
     user: state.UserReducer.Recommendations,
     givenRatings: state.UserReducer,
+    name: state.UserReducer.name,
   };
 }
 

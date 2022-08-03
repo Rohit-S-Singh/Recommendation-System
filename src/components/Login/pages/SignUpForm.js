@@ -13,6 +13,7 @@ class SignUpForm extends Component {
       email: "",
       password: "",
       name: "",
+      hasAgreed: false
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -33,7 +34,13 @@ class SignUpForm extends Component {
   handleSubmit(e) {
     e.preventDefault();
 
+    // console.log("abcdefghijklmnopqrstuv",this.props);
+
     this.props.signUp(this.state,this.props.notify);
+    console.log("lknkl", this.props);
+
+    // console.log("The form was submitted with the following data:");
+    // console.log(this.state);
 
     // this.props.notify('Signed up succesfully');
     // console.log("this props notify",this.props.notify);
@@ -41,6 +48,7 @@ class SignUpForm extends Component {
   }
 
   render() {
+  console.log(this.props.text);
     return (
       <div className="formCenter">
         <form onSubmit={this.handleSubmit} className="formFields">
