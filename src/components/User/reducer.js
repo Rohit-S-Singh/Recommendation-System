@@ -1,5 +1,6 @@
 import { ADD_RATING} from "./actions";
 import {ADD_RECOMMENDATIONS} from "./actions";
+import {USER_DATA} from "./actions";
 
 var initialstate = {
     id:"",
@@ -19,8 +20,9 @@ export const UserReducer = (state = initialstate , action)=>{
             } )
             return {...state};   
 
-    //     case ADD_FAVOURITES:
-    //         return {...state , favourites: [ ...state.favourites  ,   action.movie]};
+        case USER_DATA:
+            console.log("dataaaaa",action.payload);
+            return {...state,name:action.payload.name};
         
     //     case REMOVE_FAVOURITES:
     //         let new_Favorites = state.favourites.filter(

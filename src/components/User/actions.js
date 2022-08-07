@@ -1,5 +1,8 @@
 export const ADD_RATING = "ADD_RATING";
 export const ADD_RECOMMENDATIONS = "ADD_RECOMMENDATIONS";
+export const USER_DATA = "USER_DATA";
+
+
 
 export function addRating(movieRating){
 
@@ -39,6 +42,12 @@ export function search(movie){
     return{
         type:"SEARCH_MOVIE",
         movie
+    }
+}
+export function setUser(user){
+    return{
+        type:"USER_DATA",
+        payload:user,
     }
 }
 
