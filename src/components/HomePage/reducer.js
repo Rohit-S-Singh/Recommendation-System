@@ -1,7 +1,6 @@
 import { ADD_MOVIE_TO_LIST , ADD_SEARCH_RESULT , ADD_FAVOURITES, ADD_MOVIES, REMOVE_FAVOURITES ,SHOW_FAVOURITE , SHOW_MOVIE} from "./actions";
 
 var initialstate = {
-    movies:[],
     favourites:[],
     showfavourite:false
 }
@@ -27,11 +26,6 @@ export const HomeReducer = (state = initialstate , action)=>{
         
         case SHOW_MOVIE:
             return {...state , showfavourite:false};
-        
-        case ADD_MOVIE_TO_LIST:
-        return{
-            ...state , movies:[action.movie , ...state.movies]
-        }
 
         default:
             return state;
@@ -70,10 +64,3 @@ var initialMovieState = {
     movies:initialstate,
     search:initialSearchState
 }
-
-// export default function RootReducer(state = initialMovieState , action){
-//     return{
-//         search: searchReducer(state.search, action),
-//         movies:HomeReducer(state.movies, action)
-//     } 
-// }

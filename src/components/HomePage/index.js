@@ -5,8 +5,9 @@ import Box from '../Navbar/navbar1';
 
 import Navbar from '../Search/navbar';
 import Tabs from '../Utility/Tabs'
+import {getMovies} from '../Movies/actions'
 
-import { movies } from '../../data'
+// import { movies } from '../../data'
 
 import MovieCard from '../MovieCard/MovieCard';
 
@@ -15,8 +16,12 @@ import { searchReducer } from './reducer';
 
 class HomePage extends React.Component {
 
+  constructor(props){
+    super(props);
+  }
+
   componentDidMount(){
-    this.props.add(movies);
+    this.props.getMovies();
   }
 
   movieclicked(){
@@ -39,7 +44,13 @@ class HomePage extends React.Component {
 
   render(){
 
-    var movies = this.props.homepage.movies;
+    // console.log("proooooooooooooppppsss",this.props);
+
+    var authenticated = this.props.authenticated;
+
+    var movies = this.props.movies;
+
+    console.log("moviesssss",movies);
     
     var favourites = this.props.homepage.favourites;
 
@@ -58,11 +69,11 @@ class HomePage extends React.Component {
 
          <div className = "tabs">
           <button  className ="show-movies" onClick = {()=>{this.funct()}}>Movies</button>
-          <button className ="show-favourites" onClick = {()=>{this.favouriteclicked()}}>Favourites</button>
+          <button className ="show-favourites" onClick = {()=>{ if(authenticated== true)this.favouriteclicked()}}>Favourites</button>
         </div> 
         <div className="list">
          {curr_tab_movies.length === 0 ? <span>No movies to show..</span> :  curr_tab_movies.map((movie)=>{
-           return <MovieCard movie = {movie} store = {this.props.store}  key={1 + ++i}/>
+           return <MovieCard authenticated = {authenticated} movie = {movie} store = {this.props.store}  key={1 + ++i}/>
          })}
         </div>
       </div>
@@ -80,13 +91,16 @@ const mapDispatchToProps = (dispatch) => {
      },
     add: (movie) => {
       dispatch(addMovies(movie))
+    },
+    getMovies:()=>{
+      dispatch(getMovies());
     }
   }
 }
 
 
 function mapStateToProps(state) {
-  return { homepage:state.HomeReducer, search:state.searchReducer };
+  return { homepage:state.HomeReducer, search:state.searchReducer,authenticated:state.authReducer.authenticated , movies:state.MovieReducer.movies};
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(HomePage);

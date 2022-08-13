@@ -56,8 +56,6 @@ export function searchReducer(state = initialSearchState , action){
     
     switch(action.type){
 
-      
-
         default:
         return state;
     }

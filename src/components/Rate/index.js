@@ -3,6 +3,8 @@ import { Container, Row, Col } from "react-grid-system";
 import ReactStars from "react-rating-stars-component";
 import "./style.css";
 
+import { connect } from "react-redux";
+
 const Rate = (props) => {
   var temp = [
     { id: "1", name: "", image: "", description: "", rating: "" },
@@ -22,6 +24,8 @@ const Rate = (props) => {
     { id: "15", name: "", image: "", description: "", rating: "" },
     { id: "16", name: "", image: "", description: "", rating: "" },
   ];
+
+  console.log("moviessssss", props.movies);
   const [visible, setVisible] = useState(3);
 
   const showMore = () => {
@@ -33,24 +37,20 @@ const Rate = (props) => {
 
     props.addRating(rating);
     props.SetRating(props.user);
-  
   };
   return (
-    <div>
+    <div style={{ marginLeft: "100px" }}>
       <div className="container">
-        {temp.slice(0, visible).map((mov) => {
+        {props.movies.slice(0, visible).map((mov) => {
           return (
             <Row>
               <Col sm={4}>
-                <img
-                  style={{ height: "300px" }}
-                  src="https://i.ibb.co/dJjd3K2/bajirao-mastani-movie-poster-1.jpg"
-                ></img>
+                <img style={{ height: "300px" }} src={mov.Poster}></img>
               </Col>
               <Col sm={6}>
                 <Row>
                   <Col sm={12}>
-                    <h2>Bajirao</h2>
+                    <h2>{mov.name}</h2>
                   </Col>
                 </Row>
                 <Row>
@@ -58,24 +58,17 @@ const Rate = (props) => {
                 </Row>
                 <br></br>
                 <Row>
-                  <Col sm={12}>Release Date - September 20, 2012</Col>
+                  <Col sm={12}>{`Release Date - ${new Date(
+                    mov.releasedDate
+                  ).toDateString()}`}</Col>
                 </Row>
                 <Row>
                   <Col sm={6}></Col>
                 </Row>
                 <br></br>
-                <p>
-                  Bajirao Mastani is a 2015 Indian Hindi-language epic
-                  historical romance film directed by Sanjay Leela Bhansali, who
-                  also composed its soundtrack. Jointly produced by Bhansali and
-                  Eros International's Kishore Lulla, the film stars Ranveer
-                  Singh, Deepika Padukone and Priyanka Chopra. The supporting
-                  cast includes Tanvi Azmi, Vaibhav Tatwawaadi and Milind Soman.
-                  Based on the Marathi novel Rau by Nagnath S.{" "}
-                </p>
+                <p>{mov.description}</p>
               </Col>
               <Col sm={2}>
-                {" "}
                 <ReactStars
                   count={5}
                   onChange={(rating) => {
@@ -106,4 +99,17 @@ const Rate = (props) => {
   );
 };
 
-export default Rate;
+const mapDispatchToProps = (dispatch) => {
+  return {};
+};
+
+function mapStateToProps(state) {
+  return {
+    homepage: state.HomeReducer,
+    search: state.searchReducer,
+    authenticated: state.authReducer.authenticated,
+    movies: state.MovieReducer.movies,
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Rate);

@@ -8,6 +8,8 @@ export const ADD_MOVIE_TO_LIST = "ADD_MOVIE_TO_LIST";
 export const ADD_SEARCH_RESULT = "ADD_SEARCH_RESULT";
 
 
+import {addmovie} from '../components/Movies/actions'
+
 export function addMovies(movies){
     return{
         type:"ADD_MOVIES",
@@ -66,6 +68,10 @@ export function handleMovieSearch(movie){
         .then(response => response.json())
         .then(movie => { 
             dispatch({type : 'ADD_SEARCH_RESULT' , movie});
+
+        
+
+            dispatch(addmovie(movie));
 
         })
     }

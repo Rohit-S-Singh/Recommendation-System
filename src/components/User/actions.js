@@ -80,17 +80,17 @@ export const SetRating = (user) => {
 
 }};
 
-export function handleMovieSearch(movie){
+// export function handleMovieSearch(movie){
 
-    const url = `https://www.omdbapi.com/?apikey=8b46f1c2&t=${movie}`;
+//     const url = `https://www.omdbapi.com/?apikey=8b46f1c2&t=${movie}`;
 
-    return function(dispatch){
+//     return function(dispatch){
 
-        fetch(url)       
-        .then(response => response.json())
-        .then(movie => { 
-            dispatch({type : 'ADD_SEARCH_RESULT' , movie});
+//         fetch(url)       
+//         .then(response => response.json())
+//         .then(movie => { 
+//             // dispatch({type : 'ADD_SEARCH_RESULT' , movie});
 
-        })
-    }
-}
+//         })
+//     }
+// }
