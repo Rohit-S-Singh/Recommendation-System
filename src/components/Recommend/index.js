@@ -75,7 +75,7 @@ const Recommend = ({ user, givenRatings, getRecommendations , name}) => {
         {user.length == 0 && (
           <button
             onClick={() => {
-              getRecommendations(user.givenRatings);
+              getRecommendations(user.givenRatings,name);
             }}
             style={{ color: "white" }}
             class="custom-btn btn-13"
@@ -119,8 +119,8 @@ const Recommend = ({ user, givenRatings, getRecommendations , name}) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    getRecommendations: (movieRating) => {
-      dispatch(sendRatings(movieRating));
+    getRecommendations: (movieRating,user_name) => {
+      dispatch(sendRatings(movieRating,user_name));
     },
   };
 };
