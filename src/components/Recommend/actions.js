@@ -2,14 +2,17 @@ import axios from "axios";
 import { addRecommendations } from "../User/actions";
 // export const SEND_RATING = "SEND_RATING";
 
-export const sendRatings = (rating) => {
-  return async (dispatch) => {
+export const sendRatings = (rating,name) => {
+  return async (dispatch,getState) => {
     try {
       let formData = new FormData();
       formData.append("UserName", "Rohit");
       formData.append("UserNafme", "Rohit");
       formData.append("UserNamfe", "Rohit");
 
+      // const user = getState().UserReducer.name;
+
+      // console.log(user);
       // var a = Object.keys(rating);
       // a.map((aa)=>{
       //   console.log(aa,rating[aa]);
@@ -26,7 +29,7 @@ export const sendRatings = (rating) => {
       // });
 
       const response = await axios.post(
-        "http://localhost:8000",
+        `http://localhost:8000/${name}`,
         JSON.stringify(rating),
         {
           headers: {
@@ -35,9 +38,8 @@ export const sendRatings = (rating) => {
         }
       );
       dispatch(addRecommendations(response.data.data));
-
-
     } catch (e) {
+      console.log(e);
     }
   };
 };
