@@ -22,6 +22,7 @@ import { reducer as notifications } from 'react-notification-system-redux';
 import {HomeReducer,searchReducer} from '../src/components/HomePage/reducer'
 import {UserReducer} from '../src/components/User/reducer'
 import authReducer from '../src/components/Authentication/reducers'
+import MovieReducer from "../src/components/Movies/reducers";
 
 
 
@@ -32,6 +33,7 @@ const createReducer = history =>
   searchReducer:searchReducer,
   UserReducer:UserReducer,
   authReducer:authReducer,
+  MovieReducer:MovieReducer
   });
 
 export default createReducer;

@@ -14,7 +14,7 @@ import { useHistory } from "react-router-dom";
     if(props.name == "Login")
      history.push(`/login`);
      else
-     history.push(`/signUp`);
+     history.push(`/login#/react-auth-ui/`);
 
   }  
   return (

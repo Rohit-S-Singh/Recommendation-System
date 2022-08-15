@@ -1,5 +1,3 @@
-
-
 export const ADD_MOVIES = "ADD_MOVIES";
 export const ADD_FAVOURITES = "ADD_FAVOURITES";
 export const REMOVE_FAVOURITES = "REMOVE_FAVOURITES";
@@ -8,7 +6,6 @@ export const SHOW_FAVOURITE = "SHOW_FAVOURITE";
 export const SHOW_MOVIE = "SHOW_MOVIE";
 export const ADD_MOVIE_TO_LIST = "ADD_MOVIE_TO_LIST";
 export const ADD_SEARCH_RESULT = "ADD_SEARCH_RESULT";
-
 
 
 export const addMovies=(movies)=>{
@@ -63,12 +60,16 @@ export function handleMovieSearch(movie){
 
     const url = `https://www.omdbapi.com/?apikey=8b46f1c2&t=${movie}`;
 
+    console.log("hjvjvj");
+
     return function(dispatch){
 
         fetch(url)       
         .then(response => response.json())
         .then(movie => { 
-            dispatch({type : 'ADD_SEARCH_RESULT' , movie});
+            // dispatch({type : 'ADD_SEARCH_RESULT' , movie});
+            // console.log(addmovie);
+            // addmovie(movie);
 
         })
     }
