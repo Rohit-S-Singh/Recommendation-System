@@ -40,7 +40,7 @@ const User = (props) => {
       <br></br>
       {/* &nbsp;&nbsp;&nbsp;&nbsp; Recommendations */}
       <Recommend></Recommend>
-      &nbsp;&nbsp;&nbsp;&nbsp; Rate
+      &nbsp;&nbsp;&nbsp;&nbsp; Rate New Movies <br/><br/><br/>
       <Rate
         user={props.user}
         SetRating={props.SetRating}

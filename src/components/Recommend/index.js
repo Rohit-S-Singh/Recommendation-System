@@ -72,7 +72,7 @@ const Recommend = ({ user, givenRatings, getRecommendations , name}) => {
         <p>Download CSV</p>
       </CsvCreator> */}
       <div style={{ display: "flex", justifyContent: "space-around" }}>
-        {user.length == 0 && (
+        {user.Recommendations.length == 0 && (
           <button
             onClick={() => {
               getRecommendations(user.givenRatings,name);
@@ -127,7 +127,7 @@ const mapDispatchToProps = (dispatch) => {
 
 function mapStateToProps(state) {
   return {
-    user: state.UserReducer.Recommendations,
+    user: state.UserReducer,
     givenRatings: state.UserReducer,
     name: state.UserReducer.name,
   };

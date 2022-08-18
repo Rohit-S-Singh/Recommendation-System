@@ -3,10 +3,10 @@ import {ADD_RECOMMENDATIONS} from "./actions";
 import {USER_DATA} from "./actions";
 
 var initialstate = {
-    id:"",
+    _id:"",
     name:"",
     followers:"",
-    givenRatings:{a:"4",b:"9"},
+    givenRatings:{},
     Recommendations:[]
 }
 

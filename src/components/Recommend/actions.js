@@ -6,9 +6,10 @@ export const sendRatings = (rating,name) => {
   return async (dispatch,getState) => {
     try {
       let formData = new FormData();
-      formData.append("UserName", "Rohit");
-      formData.append("UserNafme", "Rohit");
-      formData.append("UserNamfe", "Rohit");
+
+      console.log("ratingggggggg",rating);
+      console.log("nameeeeeeeeeeeeeee",name);
+
 
       // const user = getState().UserReducer.name;
 
