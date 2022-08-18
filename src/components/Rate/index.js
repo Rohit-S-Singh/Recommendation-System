@@ -4,44 +4,56 @@ import ReactStars from "react-rating-stars-component";
 import "./style.css";
 
 import { connect } from "react-redux";
+import { UserReducer } from "../User/reducer";
 
 const Rate = (props) => {
-  var temp = [
-    { id: "1", name: "", image: "", description: "", rating: "" },
-    { id: "2", name: "", image: "", description: "", rating: "" },
-    { id: "3", name: "", image: "", description: "", rating: "" },
-    { id: "4", name: "", image: "", description: "", rating: "" },
-    { id: "5", name: "", image: "", description: "", rating: "" },
-    { id: "6", name: "", image: "", description: "", rating: "" },
-    { id: "7", name: "", image: "", description: "", rating: "" },
-    { id: "8", name: "", image: "", description: "", rating: "" },
-    { id: "9", name: "", image: "", description: "", rating: "" },
-    { id: "10", name: "", image: "", description: "", rating: "" },
-    { id: "11", name: "", image: "", description: "", rating: "" },
-    { id: "12", name: "", image: "", description: "", rating: "" },
-    { id: "13", name: "", image: "", description: "", rating: "" },
-    { id: "14", name: "", image: "", description: "", rating: "" },
-    { id: "15", name: "", image: "", description: "", rating: "" },
-    { id: "16", name: "", image: "", description: "", rating: "" },
-  ];
-
   console.log("moviessssss", props.movies);
   const [visible, setVisible] = useState(3);
 
   const showMore = () => {
     setVisible((value) => value + 3);
   };
+
   const ratingChanged = (movie, newRating) => {
     var rating = {};
-    rating[movie.id] = newRating;
+    rating[movie.name] = newRating;
+
+    console.log(movie, props.user);
 
     props.addRating(rating);
-    props.SetRating(props.user);
+    props.SetRating(rating,props.user);
   };
+
+  var moviesLeftToBeRated = [];
+
+  console.log("everv", props.rated);
+
+  var movies_rated = Object.keys(props.rated);
+
+  props.movies.slice(0, visible).map((mov) => {
+    if (movies_rated.indexOf(mov.name) == -1) {
+      moviesLeftToBeRated.push(mov);
+    }
+  });
+
+  console.log(moviesLeftToBeRated);
+
   return (
     <div style={{ marginLeft: "100px" }}>
+      {movies_rated.length > 0 && (
+        <div style={{display:'flex',width:'400px',justifyContent:'space-evenly'}}>
+          <div>
+            <button>Add Given Ratings</button>
+          </div>
+
+          <div>
+            <button>Clear Added Ratings</button>
+          </div>
+          <br/><br/>
+        </div>
+      )}
       <div className="container">
-        {props.movies.slice(0, visible).map((mov) => {
+        {moviesLeftToBeRated.map((mov) => {
           return (
             <Row>
               <Col sm={4}>
@@ -94,6 +106,11 @@ const Rate = (props) => {
             Load More ...
           </button>
         </div>
+        {moviesLeftToBeRated.length == 0 && (
+          <div>
+            No More Movies Left to be Rated. Search New Movies to Rate....
+          </div>
+        )}
       </div>
     </div>
   );
@@ -109,6 +126,7 @@ function mapStateToProps(state) {
     search: state.searchReducer,
     authenticated: state.authReducer.authenticated,
     movies: state.MovieReducer.movies,
+    rated: state.UserReducer.givenRatings,
   };
 }
 
