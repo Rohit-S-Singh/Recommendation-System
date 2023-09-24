@@ -5,7 +5,8 @@ body {
   padding: 0px;
   /* background-image: url("./bg.jpg"); */
   color: white;
-  background: rgba(0, 0, 0, 1) /* black background with 100% opacity */;
+  background: #081922;
+   /* rgba(0, 0, 0, 1) black background with 100% opacity; */
   font-family: 'Nunito', sans-serif;
 
 
@@ -13,7 +14,9 @@ body {
 
 .list-item{
 
-  background-color: black;
+  /* background-color: black; */
+  background: #081922;
+
   color: white;
   display: flex;
   padding: 40px;
@@ -113,7 +116,9 @@ body {
 }
 
 .search-result{
-  background-color: black;
+  /* background-color: black; */
+  background-color: #081922;
+
   display: flex;
   width: 600px;
   height: 200px;

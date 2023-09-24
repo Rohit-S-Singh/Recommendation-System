@@ -21,20 +21,20 @@ const Recommend = ({ user, givenRatings, getRecommendations , name}) => {
   const responsive = {
     desktop1: {
       breakpoint: { max: 3000, min: 1400 },
-      items: 4,
+      items: 5,
       //  slidesToSlide: 3, // optional, default to 1.
     },
     desktop2: {
       breakpoint: { max: 1400, min: 997 },
-      items: 3,
+      items: 4,
     },
     tablet: {
       breakpoint: { max: 997, min: 600 },
-      items: 2,
+      items: 3,
     },
     mobile: {
       breakpoint: { max: 320, min: 0 },
-      items: 1,
+      items: 2,
     },
   };
 
@@ -49,6 +49,9 @@ const Recommend = ({ user, givenRatings, getRecommendations , name}) => {
   }, []);
 
   var temp_Products = [
+    { image: "", description: "", price: "", sale: "", ratings: "", brand: "" },
+    { image: "", description: "", price: "", sale: "", ratings: "", brand: "" },
+    { image: "", description: "", price: "", sale: "", ratings: "", brand: "" },
     { image: "", description: "", price: "", sale: "", ratings: "", brand: "" },
     { image: "", description: "", price: "", sale: "", ratings: "", brand: "" },
     { image: "", description: "", price: "", sale: "", ratings: "", brand: "" },
@@ -67,11 +70,11 @@ const Recommend = ({ user, givenRatings, getRecommendations , name}) => {
   }
 
   return (
-    <div>
+    <div  style={{ borderLeft:'100px'}}>
       {/* <CsvCreator filename="my_cool_csv" headers={headers} rows={rows}>
         <p>Download CSV</p>
       </CsvCreator> */}
-      <div style={{ display: "flex", justifyContent: "space-around" }}>
+      <div style={{ borderLeft:'100px', display: "flex", justifyContent: "space-around" }}>
         {user.Recommendations.length == 0 && (
           <button
             onClick={() => {

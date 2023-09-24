@@ -35,9 +35,6 @@ class Navbar extends React.Component{
 
     render(){
 
-
-    
-
         const { showSearchResults } = this.props.search;
 
         const result = this.props.search.result;
