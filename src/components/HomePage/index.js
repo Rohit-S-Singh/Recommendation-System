@@ -6,7 +6,7 @@ import Box from '../Navbar/navbar1';
 import Navbar from '../Search/navbar';
 import Tabs from '../Utility/Tabs'
 import {getMovies} from '../Movies/actions'
-
+import Footer from '../footer'
 // import { movies } from '../../data'
 
 import MovieCard from '../MovieCard/MovieCard';
@@ -76,7 +76,11 @@ class HomePage extends React.Component {
            return <MovieCard authenticated = {authenticated} movie = {movie} store = {this.props.store}  key={1 + ++i}/>
          })}
         </div>
+      
+        <Footer/>
+      
       </div>
+     
     );
   }
 }
