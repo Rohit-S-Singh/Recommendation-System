@@ -55,7 +55,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     transition: theme.transitions.create("width"),
     width: "100%",
     [theme.breakpoints.up("md")]: {
-      width: "20ch",
+      width: "60ch",
     },
   },
 }));
@@ -167,7 +167,7 @@ const PrimarySearchAppBar = (props) => {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar style={{ backgroundColor: "black" }} position="static">
+      <AppBar style={{ backgroundColor: "#081922" }} position="static">
         <Toolbar>
           <IconButton
             size="large"
@@ -191,7 +191,7 @@ const PrimarySearchAppBar = (props) => {
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
-              placeholder="Search…"
+              placeholder="Find Movie, TV shows and more.."
               inputProps={{ "aria-label": "search" }}
             />
           </Search>

@@ -45,8 +45,6 @@ class HomePage extends React.Component {
 
   render(){
 
-    // console.log("proooooooooooooppppsss",this.props);
-
     var authenticated = this.props.authenticated;
 
     var movies = this.props.movies;
@@ -64,8 +62,8 @@ class HomePage extends React.Component {
     return (
       <div className="App">
         {/* Hello World */}
-        <Box/>
-        
+        <div style={{position:"fixed",zIndex:"1",width:"100%"}}><Box/></div>
+
          <Navbar   search = {this.props.search.showSearchResults}   results={this.props.search.results}/>
          <Carousel/>
         <Tabs func = {this.funct} func2 = {this.favouriteclicked} activetab = {activetab} ></Tabs>
@@ -79,11 +77,8 @@ class HomePage extends React.Component {
            return <MovieCard authenticated = {authenticated} movie = {movie} store = {this.props.store}  key={1 + ++i}/>
          })}
         </div>
-      
         <Footer/>
-      
       </div>
-     
     );
   }
 }
