@@ -7,6 +7,7 @@ import Navbar from '../Search/navbar';
 import Tabs from '../Utility/Tabs'
 import {getMovies} from '../Movies/actions'
 import Footer from '../footer'
+import Carousel from '../movieCarousel'
 // import { movies } from '../../data'
 
 import MovieCard from '../MovieCard/MovieCard';
@@ -64,9 +65,11 @@ class HomePage extends React.Component {
       <div className="App">
         {/* Hello World */}
         <Box/>
+        
          <Navbar   search = {this.props.search.showSearchResults}   results={this.props.search.results}/>
+         <Carousel/>
         <Tabs func = {this.funct} func2 = {this.favouriteclicked} activetab = {activetab} ></Tabs>
-
+        
          <div className = "tabs">
           <button  className ="show-movies" onClick = {()=>{this.funct()}}>Movies</button>
           <button className ="show-favourites" onClick = {()=>{ if(authenticated== true)this.favouriteclicked()}}>Favourites</button>

@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=AR+One+Sans&display=swap');
+ 
+ .container{
+   margin: 50px;
+   font-family: 'AR One Sans', sans-serif;
+   
+ }
+ .container .heading{
+   margin-bottom: 10px;
+
+ }
+.card-body{
+  margin-top: 12px;
+  font-family: 'Baloo Bhai 2', cursive;
+}
