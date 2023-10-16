@@ -46,8 +46,6 @@ class HomePage extends React.Component {
 
   render(){
 
-    // console.log("proooooooooooooppppsss",this.props);
-
     var authenticated = this.props.authenticated;
 
     var movies = this.props.movies;
@@ -65,8 +63,8 @@ class HomePage extends React.Component {
     return (
       <div className="App">
         {/* Hello World */}
-        <Box/>
-        
+        <div style={{position:"fixed",zIndex:"1",width:"100%"}}><Box/></div>
+
          <Navbar   search = {this.props.search.showSearchResults}   results={this.props.search.results}/>
          <Carousel/>
          <NewsCarousel/>
@@ -80,12 +78,11 @@ class HomePage extends React.Component {
          {curr_tab_movies.length === 0 ? <span>No movies to show..</span> :  curr_tab_movies.map((movie)=>{
            return <MovieCard authenticated = {authenticated} movie = {movie} store = {this.props.store}  key={1 + ++i}/>
          })}
+muskan-develop
         </div> */}
       
         <Footer/>
-      
       </div>
-     
     );
   }
 }
