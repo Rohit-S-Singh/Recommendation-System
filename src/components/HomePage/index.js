@@ -8,6 +8,7 @@ import Tabs from '../Utility/Tabs'
 import {getMovies} from '../Movies/actions'
 import Footer from '../footer'
 import Carousel from '../movieCarousel'
+import NewsCarousel from '../newsCarousel';
 // import { movies } from '../../data'
 
 import MovieCard from '../MovieCard/MovieCard';
@@ -66,17 +67,20 @@ class HomePage extends React.Component {
 
          <Navbar   search = {this.props.search.showSearchResults}   results={this.props.search.results}/>
          <Carousel/>
-        <Tabs func = {this.funct} func2 = {this.favouriteclicked} activetab = {activetab} ></Tabs>
+         <NewsCarousel/>
+        {/* <Tabs func = {this.funct} func2 = {this.favouriteclicked} activetab = {activetab} ></Tabs> */}
         
-         <div className = "tabs">
+         {/* <div className = "tabs">
           <button  className ="show-movies" onClick = {()=>{this.funct()}}>Movies</button>
           <button className ="show-favourites" onClick = {()=>{ if(authenticated== true)this.favouriteclicked()}}>Favourites</button>
-        </div> 
-        <div className="list">
+        </div>  */}
+        {/* <div className="list">
          {curr_tab_movies.length === 0 ? <span>No movies to show..</span> :  curr_tab_movies.map((movie)=>{
            return <MovieCard authenticated = {authenticated} movie = {movie} store = {this.props.store}  key={1 + ++i}/>
          })}
-        </div>
+muskan-develop
+        </div> */}
+      
         <Footer/>
       </div>
     );
