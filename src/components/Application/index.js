@@ -10,7 +10,7 @@
  import { BrowserRouter, Switch, Route } from "react-router-dom";
  
  // routes
- import Login from "../Login";
+ import Login from "../Login"
  import SignUp from "../SignUp";
  import HomePage from "../HomePage";
  import User from "../User";
@@ -28,7 +28,7 @@
  
    render() {
      console.log("authenticated", this.props.authenticated);
-     var a = this.props.authenticated == true ? User : Login ;
+    //  var a = this.props.authenticated == true ? User : Login ;
      return (
        <div className="application">
          <main className="main">
@@ -38,9 +38,10 @@
                <Switch>
                  <Route exact path="/" component={HomePage} />
                  <Route exact path="/login" component={Login} />
+                 {/* <Route path='/login' element={<Login/>}/> */}
                  <Route exact path="/SignUp" component={SignUp} />
-                 <Route path="/user" component={a} />
-                 <Route path="*" component={Login} />
+                 {/* <Route path="/user" component={a} /> */}
+                 {/* <Route path="*" component={Login} /> */}
                </Switch>
              </BrowserRouter>
            </div>

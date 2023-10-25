@@ -1,0 +1,12 @@
+.btncontainer .loginbtn {
+    border: 1px solid rgba(25, 118, 210, 0.5);
+    padding: 10px;
+    margin-left: 15px;
+    background-color: rgb(15, 15, 37);
+    color: #1976d2;
+}
+
+.btncontainer .loginbtn:hover {
+    background-color: rgb(15, 15, 37);
+    border: 2px solid rgba(25, 118, 210, 0.5);
+}
