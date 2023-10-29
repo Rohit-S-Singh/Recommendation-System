@@ -1,0 +1,176 @@
+.login {
+    color: white;
+
+}
+
+.loginlogo {
+    border-radius: 60px;
+}
+
+.login p {
+    display: flex;
+    justify-content: right;
+    margin-right: 70px;
+    margin-top: 50px;
+    font-weight: bold;
+
+}
+
+.login p:hover {
+    cursor: pointer;
+}
+
+.loginform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100wh;
+    height: 100vh;
+    margin-top: 180px;
+    flex-direction: column;
+
+}
+
+.loginform p {
+    font-size: 25px;
+    margin-top: 12px;
+    margin-left: 70px;
+}
+
+.loginform .google .loginfield {
+    border: 2px solid white;
+    border-radius: 12px;
+    font-size: 5px;
+    padding: 17px;
+
+    text-align: center;
+    justify-content: center;
+    width: 270px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 40px;
+}
+
+.google .logingoogle {
+    position: absolute;
+    margin-top: -36px;
+    margin-left: 90px;
+
+}
+
+.loginform .facebook .loginfieldfb {
+    border: 2px solid rgb(31, 95, 168);
+    border-radius: 12px;
+    font-size: 12px;
+    padding: 17px;
+    text-align: center;
+    justify-content: center;
+    width: 270px;
+    background-color: rgb(31, 95, 168);
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.facebook .loginfacebook {
+    position: absolute;
+    margin-top: -44px;
+    border-radius: 12px;
+    margin-left: 90px;
+
+}
+
+.line hr {
+    width: 280px;
+    margin-top: 29px;
+}
+
+.or {
+    width: 35px;
+    background-color: #081922;
+    margin-top: -12px;
+    text-align: center;
+}
+
+.sign p {
+    margin-top: 22px;
+    font-size: 13px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.email input {
+    width: 270px;
+    margin-left: 20px;
+
+
+    background-color: transparent;
+    border: 0.2px solid white;
+    border-radius: 4px;
+    margin-top: 12px;
+    border-radius: 12px;
+    font-weight: lighter;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+}
+
+.signinbtn button {
+    width: 270px;
+    margin-left: 20px;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    padding: 18px;
+    /* background-color: #03192a; */
+    background-color: rgba(78, 73, 73, 0.678);
+    color: white;
+    border-radius: 12px;
+    font-size: 17px;
+    border: 1px solid rgba(78, 73, 73, 0.678);
+    cursor: pointer;
+}
+
+.forget p {
+    margin-left: 75px;
+    margin-bottom: -10px;
+    font-size: 12px;
+}
+
+.acc p {
+    margin-left: 75px;
+    margin-bottom: -10px;
+    font-size: 12px;
+    font-weight: lighter;
+    color: rgba(152, 142, 142, 0.678);
+}
+
+.acc p span {
+    font-weight: bold;
+    color: white;
+}
+
+.term p {
+    margin-left: 75px;
+    margin-top: 40px;
+    /* margin-bottom: -10px; */
+    margin-bottom: -10px;
+    font-size: 12px;
+    font-weight: lighter;
+    color: rgba(152, 142, 142, 0.678);
+}
+
+.col p {
+    margin-left: 75px;
+
+    margin-bottom: -20px;
+    font-size: 12px;
+    font-weight: lighter;
+    color: white;
+}
+
+.col p span {
+    color: rgba(152, 142, 142, 0.678);
+    margin-bottom: 140px;
+}

@@ -18,7 +18,7 @@ import AccountCircle from "@mui/icons-material/AccountCircle";
 import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
-import Buttonu from "../Button";
+import Button from "../Button";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -231,11 +231,12 @@ const PrimarySearchAppBar = (props) => {
               </IconButton>
             </Box>
           )}
-          <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            {loggedin == 0 && <Buttonu name="SignUp"></Buttonu>}{" "}
+          {/* <Box sx={{ display: { xs: "none", md: "flex" } }}>
+            {loggedin == 0 && <Buttonu name="SignUp"></Buttonu>}
             &nbsp;&nbsp;&nbsp;
             {loggedin == 0 && <Buttonu name="Login"></Buttonu>}
-          </Box>
+          </Box> */}
+          <Button/>
 
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton

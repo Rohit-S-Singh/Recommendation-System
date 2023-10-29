@@ -1,0 +1,182 @@
+.signup {
+    color: white;
+}
+
+.signuplogo {
+    margin-top: -310px;
+    border-radius: 43px;
+}
+
+.signup p {
+    display: flex;
+    justify-content: right;
+    margin-right: 70px;
+    margin-top: 50px;
+    font-weight: bold;
+
+}
+
+.signup p:hover {
+    cursor: pointer;
+}
+
+.signupform {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100wh;
+    height: 100vh;
+    margin-top: 450px;
+    flex-direction: column;
+
+}
+
+.signupform p {
+    font-size: 28px;
+    text-align: center;
+    margin-top: 12px;
+    margin-left: 70px;
+}
+
+.signup .sub {
+    color: #f3e8e8;
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+.signupform .google .signupfield {
+    border: 2px solid white;
+    border-radius: 12px;
+    font-size: 12px;
+    padding: 17px;
+    text-align: center;
+    justify-content: center;
+    width: 270px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.google .signupgoogle {
+    position: absolute;
+    margin-top: -36px;
+    margin-left: 90px;
+
+}
+
+.signupform .facebook .signupfieldfb {
+    border: 2px solid rgb(31, 95, 168);
+    border-radius: 12px;
+  
+    padding: 17px;
+    text-align: center;
+    justify-content: center;
+    width: 270px;
+    background-color: rgb(31, 95, 168);
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 10px;
+}
+
+.facebook .signupfacebook {
+    position: absolute;
+    margin-top: -44px;
+    margin-left: 80px;
+    border-radius: 12px;
+}
+
+.sign p {
+    margin-top: 22px;
+    font-size: 15px;
+    margin-bottom: 15px;
+    font-weight: lighter;
+}
+
+.birth p {
+    width: 150px;
+    margin-left: -70px;
+
+    margin-top: 20px;
+    font-weight: lighter;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+}
+
+.birth input {
+    width: 90px;
+    margin-left: 0px;
+
+    background-color: transparent;
+    border: 0.2px solid white;
+    border-radius: 0px;
+    margin-top: 2px;
+    font-weight: lighter;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+}
+
+.birth .mdy {
+    margin-left: 23px;
+}
+
+.box {
+    width: 270px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+
+    color: white;
+    font-size: 18px;
+    margin-left: 20px;
+    padding: 20px;
+    background-color: transparent;
+}
+
+.box option {
+    margin-bottom: 30px;
+    padding: 30px;
+    background-color: rgb(65, 61, 61);
+    padding-bottom: 40px;
+}
+
+.col1 p {
+    margin-left: 75px;
+
+    margin-bottom: -20px;
+    font-size: 12px;
+    font-weight: lighter;
+    color: white;
+}
+
+.col1 p span {
+    color: rgba(152, 142, 142, 0.678);
+    margin-bottom: 140px;
+}
+
+.term1 p {
+    margin-left: 75px;
+    margin-top: 12px;
+    /* margin-bottom: -10px; */
+    margin-bottom: -10px;
+    font-size: 14px;
+    font-weight: lighter;
+    color: rgba(152, 142, 142, 0.678);
+}
+
+.acc1 p {
+    margin-left: 75px;
+    /* margin-bottom: -10px; */
+    margin-top: -100px;
+    font-size: 12px;
+    font-weight: lighter;
+    color: rgba(152, 142, 142, 0.678);
+}
+
+.acc1 p span {
+    font-weight: bold;
+    color: white;
+}
