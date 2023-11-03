@@ -12,9 +12,9 @@ import NewsCarousel from '../newsCarousel';
 // import { movies } from '../../data'
 
 import MovieCard from '../MovieCard/MovieCard';
-
 import {  showfav , showmov , addMovies} from '../../actions/action';
 import { searchReducer } from './reducer';
+
 
 class HomePage extends React.Component {
 
@@ -43,6 +43,9 @@ class HomePage extends React.Component {
     this.movieclicked();
      this.handleButtonClick();
   }
+ 
+ 
+
 
   render(){
 
@@ -61,11 +64,13 @@ class HomePage extends React.Component {
     var i = 0;
 
     return (
-      <div className="App">
+      <div className="App" >
         {/* Hello World */}
+        
         <div style={{position:"fixed",zIndex:"1",width:"100%"}}><Box/></div>
 
          <Navbar   search = {this.props.search.showSearchResults}   results={this.props.search.results}/>
+
          <Carousel/>
          <NewsCarousel/>
         {/* <Tabs func = {this.funct} func2 = {this.favouriteclicked} activetab = {activetab} ></Tabs> */}
@@ -82,6 +87,7 @@ muskan-develop
         </div> */}
       
         <Footer/>
+      
       </div>
     );
   }

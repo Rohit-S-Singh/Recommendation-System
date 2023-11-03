@@ -19,6 +19,9 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import Button from "../Button";
+import Sidebar from "../Sidebar/sidebar";
+
+
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -169,7 +172,7 @@ const PrimarySearchAppBar = (props) => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar style={{ backgroundColor: "#081922" }} position="static">
         <Toolbar>
-          <IconButton
+          {/* <IconButton
             size="large"
             edge="start"
             color="inherit"
@@ -177,7 +180,9 @@ const PrimarySearchAppBar = (props) => {
             sx={{ mr: 2 }}
           >
             <MenuIcon />
-          </IconButton>
+          </IconButton> */}
+          
+          <Sidebar />
           <Typography
             variant="h6"
             noWrap
