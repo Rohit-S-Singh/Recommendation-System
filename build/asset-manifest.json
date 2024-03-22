@@ -1,0 +1,39 @@
+{
+  "files": {
+    "main.css": "/Rohit-S-Singh/Recommendation-System/static/css/main.82c35af9.css",
+    "main.js": "/Rohit-S-Singh/Recommendation-System/static/js/main.4bf46205.js",
+    "static/media/nav-back.jpg": "/Rohit-S-Singh/Recommendation-System/static/media/nav-back.821a41da95653df21c2d.jpg",
+    "static/media/moive2.jpg": "/Rohit-S-Singh/Recommendation-System/static/media/moive2.fb75f009d0de363e94a8.jpg",
+    "static/media/movie4.jpeg": "/Rohit-S-Singh/Recommendation-System/static/media/movie4.2ebb983e8cb197e72ec1.jpeg",
+    "static/media/m3.jpg": "/Rohit-S-Singh/Recommendation-System/static/media/m3.e727a6ae468d7517a671.jpg",
+    "static/media/m6.jpg": "/Rohit-S-Singh/Recommendation-System/static/media/m6.ba8b381b6c1ebecc142e.jpg",
+    "static/media/email.png": "/Rohit-S-Singh/Recommendation-System/static/media/email.7414d570689f54b48336.png",
+    "static/media/m2.jpg": "/Rohit-S-Singh/Recommendation-System/static/media/m2.55b7ee062b9eadd54244.jpg",
+    "static/media/m8.jpg": "/Rohit-S-Singh/Recommendation-System/static/media/m8.4d1eadf1fd743c67a09f.jpg",
+    "static/media/m1.jpg": "/Rohit-S-Singh/Recommendation-System/static/media/m1.b0cae36d19d9d6802204.jpg",
+    "static/media/alert.jpg": "/Rohit-S-Singh/Recommendation-System/static/media/alert.43a903d2ee8cb05f7b7b.jpg",
+    "static/media/m5.jpg": "/Rohit-S-Singh/Recommendation-System/static/media/m5.7f9c50ec99ce57dfa6ec.jpg",
+    "static/media/youtube.jpeg": "/Rohit-S-Singh/Recommendation-System/static/media/youtube.3d4b6dcf4aa517caffcd.jpeg",
+    "static/media/instragram.jpeg": "/Rohit-S-Singh/Recommendation-System/static/media/instragram.03c982d06b1dea63d2eb.jpeg",
+    "static/media/search.png": "/Rohit-S-Singh/Recommendation-System/static/media/search.c2d054025798589bf5dc.png",
+    "static/media/linkdin.jpeg": "/Rohit-S-Singh/Recommendation-System/static/media/linkdin.372d630a7a1c0c39bdb2.jpeg",
+    "static/media/logingoogle.png": "/Rohit-S-Singh/Recommendation-System/static/media/logingoogle.cadee8cdb0c0afb1a713.png",
+    "static/media/loginfacebook.png": "/Rohit-S-Singh/Recommendation-System/static/media/loginfacebook.795fce8e464693d7346d.png",
+    "static/media/facebook.jpeg": "/Rohit-S-Singh/Recommendation-System/static/media/facebook.459d614112d51cbdf4a5.jpeg",
+    "static/media/revicons.eot": "/Rohit-S-Singh/Recommendation-System/static/media/revicons.a77de540a38981833f9e.eot",
+    "static/media/revicons.ttf": "/Rohit-S-Singh/Recommendation-System/static/media/revicons.57fd05d4ae650374c8de.ttf",
+    "static/media/twitter.jpeg": "/Rohit-S-Singh/Recommendation-System/static/media/twitter.49e1e8a285bc13770b22.jpeg",
+    "static/media/revicons.woff": "/Rohit-S-Singh/Recommendation-System/static/media/revicons.e8746a624ed098489406.woff",
+    "static/media/slick.svg": "/Rohit-S-Singh/Recommendation-System/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/Rohit-S-Singh/Recommendation-System/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/Rohit-S-Singh/Recommendation-System/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/Rohit-S-Singh/Recommendation-System/static/media/slick.295183786cd8a1389865.woff",
+    "index.html": "/Rohit-S-Singh/Recommendation-System/index.html",
+    "main.82c35af9.css.map": "/Rohit-S-Singh/Recommendation-System/static/css/main.82c35af9.css.map",
+    "main.4bf46205.js.map": "/Rohit-S-Singh/Recommendation-System/static/js/main.4bf46205.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.82c35af9.css",
+    "static/js/main.4bf46205.js"
+  ]
+}

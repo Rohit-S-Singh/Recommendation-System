@@ -69,6 +69,7 @@ const store = createStore(
 
 
 const app = () => (
+  // <h1>hvjhv</h1>
   <Provider store={store}>
     <ConnectedRouter history={history} >
       <NotificationsProvider>
